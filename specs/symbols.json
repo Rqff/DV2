@@ -1,0 +1,29 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": { "text": "Proportional symbol map", "subtitle": "PLACEHOLDER values: circle area = number of threatened species" },
+  "width": "container",
+  "height": 380,
+  "projection": { "type": "equalEarth" },
+  "layer": [
+    {
+      "data": {
+        "url": "https://cdn.jsdelivr.net/npm/vega-datasets@2.11.0/data/world-110m.json",
+        "format": { "type": "topojson", "feature": "countries" }
+      },
+      "mark": { "type": "geoshape", "fill": "#dbe3e1", "stroke": "white", "strokeWidth": 0.3 }
+    },
+    {
+      "data": { "url": "data/PLACEHOLDER_points.csv" },
+      "mark": { "type": "circle", "color": "#c8402b", "opacity": 0.7, "stroke": "white" },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude": { "field": "lat", "type": "quantitative" },
+        "size": { "field": "value", "type": "quantitative", "scale": { "range": [40, 1600] }, "title": "Threatened species" },
+        "tooltip": [
+          { "field": "name", "type": "nominal", "title": "Place" },
+          { "field": "value", "type": "quantitative", "title": "Threatened species" }
+        ]
+      }
+    }
+  ]
+}

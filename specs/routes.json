@@ -1,0 +1,34 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": { "text": "Route map", "subtitle": "PLACEHOLDER routes. Use for migration paths or trafficking routes: one line per route, drawn in step order" },
+  "width": "container",
+  "height": 380,
+  "projection": { "type": "equalEarth" },
+  "layer": [
+    {
+      "data": { "url": "https://cdn.jsdelivr.net/npm/vega-datasets@2.11.0/data/world-110m.json", "format": { "type": "topojson", "feature": "countries" } },
+      "mark": { "type": "geoshape", "fill": "#dbe3e1", "stroke": "white", "strokeWidth": 0.3 }
+    },
+    {
+      "data": { "url": "data/PLACEHOLDER_routes.csv" },
+      "mark": { "type": "line", "strokeWidth": 2.5, "opacity": 0.85 },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude": { "field": "lat", "type": "quantitative" },
+        "detail": { "field": "route", "type": "nominal" },
+        "order": { "field": "step", "type": "quantitative" },
+        "color": { "field": "route", "type": "nominal", "title": "Route" }
+      }
+    },
+    {
+      "data": { "url": "data/PLACEHOLDER_routes.csv" },
+      "mark": { "type": "circle", "size": 50, "stroke": "white" },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude": { "field": "lat", "type": "quantitative" },
+        "color": { "field": "route", "type": "nominal", "legend": null },
+        "tooltip": [{ "field": "route", "type": "nominal" }, { "field": "step", "type": "quantitative", "title": "Stop number" }]
+      }
+    }
+  ]
+}

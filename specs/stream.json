@@ -1,0 +1,18 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": { "text": "Streamgraph: threatened species by risk level", "subtitle": "PLACEHOLDER values. Thicker stream = more species at that risk level" },
+  "width": "container",
+  "height": 280,
+  "data": { "url": "data/PLACEHOLDER_status_over_time.csv" },
+  "mark": { "type": "area", "interpolate": "monotone" },
+  "encoding": {
+    "x": { "field": "year", "type": "quantitative", "axis": { "format": "d", "title": null } },
+    "y": { "field": "count", "type": "quantitative", "stack": "center", "axis": null },
+    "color": {
+      "field": "status", "type": "nominal", "title": "Risk level",
+      "scale": { "domain": ["VU", "EN", "CR"], "range": ["#f2c744", "#e8833a", "#c8402b"] }
+    },
+    "order": { "field": "status", "sort": "descending" },
+    "tooltip": [{ "field": "status", "type": "nominal" }, { "field": "year", "type": "quantitative", "format": "d" }, { "field": "count", "type": "quantitative" }]
+  }
+}

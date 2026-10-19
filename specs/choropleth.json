@@ -1,0 +1,34 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": { "text": "Choropleth map", "subtitle": "PLACEHOLDER values: swap in real counts of threatened species per country" },
+  "width": "container",
+  "height": 380,
+  "projection": { "type": "equalEarth" },
+  "data": {
+    "url": "https://cdn.jsdelivr.net/npm/vega-datasets@2.11.0/data/world-110m.json",
+    "format": { "type": "topojson", "feature": "countries" }
+  },
+  "transform": [
+    {
+      "lookup": "id",
+      "from": { "data": { "url": "data/PLACEHOLDER_countries.csv" }, "key": "id", "fields": ["country", "threatened"] }
+    }
+  ],
+  "mark": { "type": "geoshape", "stroke": "white", "strokeWidth": 0.3 },
+  "encoding": {
+    "color": {
+      "condition": {
+        "test": "isValid(datum.threatened)",
+        "field": "threatened",
+        "type": "quantitative",
+        "scale": { "scheme": "oranges" },
+        "title": "Threatened species"
+      },
+      "value": "#e3e9e8"
+    },
+    "tooltip": [
+      { "field": "country", "type": "nominal", "title": "Country" },
+      { "field": "threatened", "type": "quantitative", "title": "Threatened species" }
+    ]
+  }
+}

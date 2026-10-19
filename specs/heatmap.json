@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": { "text": "Heatmap: animal group by threat level", "subtitle": "PLACEHOLDER counts. VU = Vulnerable, EN = Endangered, CR = Critically Endangered" },
+  "width": "container",
+  "height": 260,
+  "data": { "url": "data/PLACEHOLDER_status_by_group.csv" },
+  "encoding": {
+    "x": { "field": "status", "type": "ordinal", "sort": ["VU", "EN", "CR"], "title": null, "axis": { "orient": "top", "labelAngle": 0 } },
+    "y": { "field": "group", "type": "nominal", "title": null }
+  },
+  "layer": [
+    {
+      "mark": "rect",
+      "encoding": {
+        "color": { "field": "count", "type": "quantitative", "scale": { "scheme": "oranges" }, "title": "Species" },
+        "tooltip": [
+          { "field": "group", "type": "nominal", "title": "Group" },
+          { "field": "status", "type": "nominal", "title": "Status" },
+          { "field": "count", "type": "quantitative", "title": "Species" }
+        ]
+      }
+    },
+    {
+      "mark": "text",
+      "encoding": {
+        "text": { "field": "count", "type": "quantitative" },
+        "color": { "condition": { "test": "datum.count > 60", "value": "white" }, "value": "#14262b" }
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+state,col,row,threatened
+NT,1,0,120
+QLD,2,0,260
+WA,0,1,230
+SA,1,1,140
+NSW,2,1,280
+ACT,3,1,40
+VIC,2,2,170
+TAS,2,3,110

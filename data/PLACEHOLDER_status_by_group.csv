@@ -1,0 +1,16 @@
+group,status,count
+Mammals,VU,40
+Mammals,EN,30
+Mammals,CR,10
+Birds,VU,70
+Birds,EN,50
+Birds,CR,20
+Reptiles,VU,35
+Reptiles,EN,25
+Reptiles,CR,15
+Amphibians,VU,60
+Amphibians,EN,45
+Amphibians,CR,30
+Fish,VU,20
+Fish,EN,15
+Fish,CR,5

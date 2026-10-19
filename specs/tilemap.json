@@ -1,0 +1,23 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": { "text": "Tile grid map of Australia", "subtitle": "PLACEHOLDER values. Each tile is one state or territory, placed roughly where it sits on the map" },
+  "width": { "step": 160 },
+  "height": { "step": 160 },
+  "data": { "url": "data/PLACEHOLDER_states.csv" },
+  "encoding": {
+    "x": { "field": "col", "type": "ordinal", "axis": null },
+    "y": { "field": "row", "type": "ordinal", "axis": null }
+  },
+  "layer": [
+    {
+      "mark": { "type": "rect", "stroke": "white", "strokeWidth": 3 },
+      "encoding": {
+        "color": { "field": "threatened", "type": "quantitative", "scale": { "scheme": "oranges" }, "title": "Threatened species" },
+        "tooltip": [{ "field": "state", "type": "nominal" }, { "field": "threatened", "type": "quantitative", "title": "Threatened species" }]
+      }
+    },
+    { "mark": { "type": "text", "fontWeight": "bold", "dy": -8 }, "encoding": { "text": { "field": "state" }, "color": { "condition": { "test": "datum.threatened > 150", "value": "white" }, "value": "#14262b" } } },
+    { "mark": { "type": "text", "dy": 12 }, "encoding": { "text": { "field": "threatened" }, "color": { "condition": { "test": "datum.threatened > 150", "value": "white" }, "value": "#14262b" } } }
+  ],
+  "config": { "view": { "stroke": null } }
+}

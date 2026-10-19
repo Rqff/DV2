@@ -1,0 +1,68 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Force-directed network: threats linked to the animal groups they affect. Needs full Vega, not Vega-Lite.",
+  "width": 860,
+  "height": 440,
+  "padding": 5,
+  "title": { "text": "Network: which threats hit which animal groups?", "subtitle": "PLACEHOLDER links. Node size = species affected, line thickness = strength of link", "anchor": "start", "font": "Fraunces, Georgia, serif", "fontSize": 17, "subtitleColor": "#566a6e" },
+  "signals": [
+    { "name": "cx", "update": "width / 2" },
+    { "name": "cy", "update": "height / 2" }
+  ],
+  "data": [
+    { "name": "node-data", "url": "data/PLACEHOLDER_network_nodes.csv", "format": { "type": "csv", "parse": "auto" } },
+    { "name": "link-data", "url": "data/PLACEHOLDER_network_links.csv", "format": { "type": "csv", "parse": "auto" } }
+  ],
+  "scales": [
+    { "name": "color", "type": "ordinal", "domain": ["Threat", "Animal group"], "range": ["#c8402b", "#1f6f78"] },
+    { "name": "size", "type": "sqrt", "domain": { "data": "node-data", "field": "size" }, "range": [200, 1600] }
+  ],
+  "legends": [{ "fill": "color", "title": "Node type", "orient": "top-right" }],
+  "marks": [
+    {
+      "name": "nodes",
+      "type": "symbol",
+      "zindex": 1,
+      "from": { "data": "node-data" },
+      "encode": {
+        "enter": {
+          "fill": { "scale": "color", "field": "type" },
+          "stroke": { "value": "white" },
+          "strokeWidth": { "value": 1.5 },
+          "tooltip": { "signal": "{'Name': datum.name, 'Species affected': datum.size}" }
+        },
+        "update": { "size": { "scale": "size", "field": "size" }, "x": { "field": "x" }, "y": { "field": "y" } }
+      },
+      "transform": [
+        {
+          "type": "force", "iterations": 300, "velocityDecay": 0.4, "signal": "force", "static": true,
+          "forces": [
+            { "force": "center", "x": { "signal": "cx" }, "y": { "signal": "cy" } },
+            { "force": "collide", "radius": 30 },
+            { "force": "nbody", "strength": -150 },
+            { "force": "link", "links": "link-data", "distance": 120 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "path",
+      "from": { "data": "link-data" },
+      "interactive": false,
+      "encode": { "update": { "stroke": { "value": "#9aa9ab" }, "strokeOpacity": { "value": 0.6 }, "strokeWidth": { "field": "weight" } } },
+      "transform": [
+        { "type": "linkpath", "require": { "signal": "force" }, "shape": "line",
+          "sourceX": "datum.source.x", "sourceY": "datum.source.y", "targetX": "datum.target.x", "targetY": "datum.target.y" }
+      ]
+    },
+    {
+      "type": "text",
+      "from": { "data": "nodes" },
+      "interactive": false,
+      "encode": {
+        "enter": { "text": { "field": "datum.name" }, "align": { "value": "center" }, "baseline": { "value": "top" }, "fontSize": { "value": 12 }, "fill": { "value": "#14262b" } },
+        "update": { "x": { "field": "x" }, "y": { "signal": "datum.y + 24" } }
+      }
+    }
+  ]
+}

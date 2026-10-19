@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Endangered Species | FIT3179 Data Visualisation 2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+</head>
+<body>
+
+<header class="hero">
+  <h1>Are we running out of time?</h1>
+  <p class="lead"></p>
+</header>
+
+<main>
+  <!-- ADD A CHART: copy one <section>, change the text, point data-spec at a new JSON file in /specs -->
+
+  <section>
+    <h2>The big picture: where are species most at risk?</h2>
+    <p>Story text goes here.</p>
+    <figure>
+      <div class="chart" data-spec="specs/choropleth.json"></div>
+      <figcaption>Source: PLACEHOLDER data. Replace with real source and URL.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Hotspots in detail</h2>
+    <p>Why a second map helps: point-level detail the country shading hides.</p>
+    <figure>
+      <div class="chart" data-spec="specs/symbols.json"></div>
+      <figcaption>Source: PLACEHOLDER data.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Which animal groups are in the most trouble?</h2>
+    <p>Explain the status levels (Vulnerable, Endangered, Critically Endangered) in plain words before the chart.</p>
+    <figure>
+      <div class="chart" data-spec="specs/heatmap.json"></div>
+      <figcaption>Source: PLACEHOLDER data.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Is it getting better or worse?</h2>
+    <p>Click a group in the legend to highlight it.</p>
+    <figure>
+      <div class="chart" data-spec="specs/trend.json"></div>
+      <figcaption>Source: PLACEHOLDER data.</figcaption>
+    </figure>
+  </section>
+
+    <section>
+    <h2>Australia, state by state</h2>
+    <p>Tile grid map: every state gets a same-sized tile, so small states are not lost.</p>
+    <figure>
+      <div class="chart" data-spec="specs/tilemap.json"></div>
+      <figcaption>Source: PLACEHOLDER data.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>What is driving the decline?</h2>
+    <p>Thicker lines mean a threat hits that animal group harder. Hover over a circle for details.</p>
+    <figure>
+      <div class="chart" data-spec="specs/network.json"></div>
+      <figcaption>Source: PLACEHOLDER data.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>How fast is the list growing?</h2>
+    <p>Each stream is one risk level. A thickening stream means more species are slipping into it.</p>
+    <figure>
+      <div class="chart" data-spec="specs/stream.json"></div>
+      <figcaption>Source: PLACEHOLDER data.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Who is bouncing back?</h2>
+    <p>Species heading up are conservation wins. Species heading down need help now.</p>
+    <figure>
+      <div class="chart" data-spec="specs/slope.json"></div>
+      <figcaption>Source: PLACEHOLDER data.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Invasive Species</h2>
+    <p>Where animals have been introduced and how they affect the native wildlife.</p>
+    <figure>
+      <div class="chart" data-spec="specs/routes.json"></div>
+      <figcaption>Source: PLACEHOLDER data.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Chart slot 10</h2>
+    <figure>
+      <div class="chart" data-spec="specs/not-built-yet.json" data-title="Treemap or Sankey" data-idiom="Needs full Vega, e.g. species by class, order, then threat level"></div>
+    </figure>
+  </section>
+</main>
+
+<footer>
+  <p><strong>Author:</strong> YOUR NAME, Monash University, FIT3179 Data Visualisation 2, Semester 2 2026. Last updated: DATE.</p>
+  <p><strong>Data sources:</strong> list each dataset with author, year and URL.</p>
+  <p><strong>AI acknowledgement:</strong><br>Claude Sonnet 5.5 - Used to make HTML template and placeholder data </p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

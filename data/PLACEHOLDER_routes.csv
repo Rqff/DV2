@@ -1,0 +1,7 @@
+route,step,lat,lon
+Route A,1,-35,150
+Route A,2,-10,160
+Route A,3,25,140
+Route B,1,-30,25
+Route B,2,0,20
+Route B,3,50,10

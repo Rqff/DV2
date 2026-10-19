@@ -1,0 +1,9 @@
+species,year,population,direction
+Species A,1990,100,Recovering
+Species A,2020,140,Recovering
+Species B,1990,100,Recovering
+Species B,2020,120,Recovering
+Species C,1990,100,Declining
+Species C,2020,60,Declining
+Species D,1990,100,Declining
+Species D,2020,35,Declining

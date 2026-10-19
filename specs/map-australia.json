@@ -1,0 +1,3 @@
+{
+  "todo": "Third map not built yet. Add an Australian states/regions GeoJSON or TopoJSON to /data, then copy specs/choropleth.json and change data.url, format.feature and the lookup key."
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": { "text": "Slope chart: who is recovering, who is sliding?", "subtitle": "PLACEHOLDER values. Each line is one species, 1990 to 2020" },
+  "width": 360,
+  "height": 320,
+  "data": { "url": "data/PLACEHOLDER_slope.csv" },
+  "encoding": {
+    "x": { "field": "year", "type": "ordinal", "axis": { "labelAngle": 0, "title": null, "labelFontSize": 13 } },
+    "y": { "field": "population", "type": "quantitative", "title": "Population index (1990 = 100)" },
+    "color": { "field": "direction", "type": "nominal", "scale": { "domain": ["Recovering", "Declining"], "range": ["#1f6f78", "#c8402b"] }, "title": null }
+  },
+  "layer": [
+    { "mark": { "type": "line", "point": true, "strokeWidth": 2.5 }, "encoding": { "detail": { "field": "species", "type": "nominal" } } },
+    {
+      "transform": [{ "filter": "datum.year == 2020" }],
+      "mark": { "type": "text", "align": "left", "dx": 8, "fontSize": 12 },
+      "encoding": { "text": { "field": "species" } }
+    }
+  ]
+}
