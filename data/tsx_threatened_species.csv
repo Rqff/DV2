@@ -1,0 +1,113 @@
+species_id,CommonName,TaxonomicGroup,status,years_monitored,regions,records
+Aipysurus fuscus,Dusky Sea Snake,Reptiles,Endangered,2,1,2
+Anstisia alba,White-bellied Frog,Amphibians,Critically Endangered,7,2,19
+Anstisia vitellina,Orange-bellied Frog,Amphibians,Vulnerable,7,1,17
+Antechinus bellus,Fawn Antechinus,Mammals,Vulnerable,13,3,85
+Aphelocephala leucopsis,South-west Southern Whiteface,Birds,Vulnerable,23,113,7598
+Atrichornis rufescens,Northern Rufous Scrub-bird,Birds,Endangered,14,3,341
+Balaenoptera musculus,Blue Whale,Mammals,Endangered,2,1,2
+Bettongia penicillata,Brush-tailed Bettong,Mammals,Critically Endangered,27,7,720
+Bettongia tropica,Northern Bettong,Mammals,Endangered,2,1,60
+Botaurus poiciloptilus,Australasian Bittern,Birds,Vulnerable,4,1,8
+Burramys parvus,Mountain Pygmy-possum,Mammals,Critically Endangered,40,2,365
+Calidris acuminata,Sharp-tailed Sandpiper,Birds,Vulnerable,31,73,8366
+Calidris ferruginea,Curlew Sandpiper,Birds,Vulnerable,42,66,9130
+Calidris tenuirostris,Great Knot,Birds,Endangered,26,47,4669
+Callocephalon fimbriatum,Gang-gang Cockatoo,Birds,Vulnerable,23,45,7263
+Calyptorhynchus lathami,Kangaroo Island Glossy Black-Cockatoo,Birds,Vulnerable,23,1,211
+Caretta caretta,Loggerhead Sea Turtle,Reptiles,Vulnerable,53,4,164
+Carinascincus palfreymani,Pedra Branca Skink,Reptiles,Vulnerable,5,1,5
+Chalinolobus dwyeri,"Large Pied Bat, Large-eared Pied Bat",Mammals,Vulnerable,19,2,29
+Charadrius mongolus,Lesser Sand Plover,Birds,Endangered,42,54,5358
+Chelonia mydas,Green Sea Turtle,Reptiles,Endangered,29,3,64
+Conilurus penicillatus,"Brush-tailed Rabbit-rat, Brush-tailed Tree-rat",Mammals,Vulnerable,16,4,225
+Dasyornis brachypterus,Southern Eastern Bristlebird,Birds,Vulnerable,25,4,827
+Dasyuroides byrnei,Kowari,Mammals,Vulnerable,21,3,50
+Dasyurus hallucatus,"Digul, Northern Quoll",Mammals,Endangered,20,11,429
+Dasyurus viverrinus,"Eastern Quoll, Luaner",Mammals,Endangered,11,2,22
+Delma impar,Striped Legless Lizard,Reptiles,Endangered,21,5,492
+Diomedea exulans,Wandering Albatross,Birds,Vulnerable,58,1,58
+Dugong dugon,Dugong,Mammals,Vulnerable,7,2,16
+Elusor macrurus,Mary River Turtle,Reptiles,Endangered,8,1,8
+Eretmochelys imbricata,Hawkesbill Sea Turtle,Reptiles,Critically Endangered,19,1,19
+Falsistrellus tasmaniensis,"Eastern False Pipistrelle, Eastern Falsistrelle",Mammals,Vulnerable,4,3,172
+Gymnobelideus leadbeateri,Leadbeater's Possum,Mammals,Critically Endangered,20,1,345
+Heleioporus australiacus,Southern Owl Frog,Amphibians,Endangered,15,1,420
+Hemiaspis damelii,Grey Snake,Reptiles,Endangered,4,1,20
+Hoplocephalus bungaroides,Broad-headed Snake,Reptiles,Vulnerable,31,2,39
+Hypotaenidia sylvestris,Lord Howe Woodhen,Birds,Endangered,26,1,26
+Isoodon auratus,Golden Bandicoot (Barrow Island),Mammals,Vulnerable,9,2,104
+Lagorchestes hirsutus,Rufous Hare-wallaby (Bernier Island),Mammals,Vulnerable,11,4,17
+Lagostrophus fasciatus,Banded Hare-wallaby,Mammals,Vulnerable,10,3,17
+Lasiorhinus krefftii,Northern Hairy-nosed Wombat,Mammals,Critically Endangered,9,1,9
+Leipoa ocellata,Malleefowl,Birds,Vulnerable,33,28,2595
+Liopholis guthega,Guthega Skink,Reptiles,Endangered,3,1,3
+Liopholis kintorei,Great Desert Skink,Reptiles,Vulnerable,21,1,55
+Litoria booroolongensis,Booroolong Frog,Amphibians,Endangered,5,3,10
+Litoria dayi,Australian Lace-lid,Amphibians,Vulnerable,8,1,12
+Litoria kroombitensis,Kroombit Tree Frog,Amphibians,Critically Endangered,23,1,64
+Litoria littlejohni,Northern Heath Frog,Amphibians,Endangered,4,2,62
+Litoria olongburensis,Wallum Sedge Frog,Amphibians,Vulnerable,13,5,86
+Litoria raniformis,Southern Bell Frog,Amphibians,Vulnerable,27,10,1795
+Litoria spenceri,Spotted Tree Frog,Amphibians,Critically Endangered,45,2,55
+Litoria watsoni,Southern Heath Frog,Amphibians,Endangered,11,2,127
+Macrotis lagotis,Bilby,Mammals,Vulnerable,13,8,62
+Manorina melanotis,Black-eared Miner,Birds,Endangered,23,2,1115
+Melithreptus validirostris,Strong-billed Honeyeater,Birds,Vulnerable,7,8,414
+Mesembriomys gouldii,"Black-footed Tree-rat (Kimberley and mainland Northern Territory), Djintamoonga, Manbul",Mammals,Vulnerable,14,6,209
+Mixophyes fleayi,Fleay's Barred Frog,Amphibians,Endangered,13,1,29
+Mixophyes iteratus,Giant Barred Frog,Amphibians,Vulnerable,17,2,66
+Myrmecobius fasciatus,Numbat,Mammals,Endangered,23,4,53
+Nangura spinosa,Nangur Spiny Skink,Reptiles,Endangered,7,1,7
+Neophema chrysogaster,Orange-bellied Parrot,Birds,Critically Endangered,33,4,198
+Neophoca cinerea,Australian Sea-lion,Mammals,Endangered,34,10,262
+Notomys fuscus,Dusky Hopping-mouse,Mammals,Vulnerable,2,6,106
+Numenius madagascariensis,Far Eastern Curlew,Birds,Endangered,30,57,7082
+Onychogalea fraenata,Bridled Nailtail Wallaby,Mammals,Vulnerable,26,3,60
+Orcaella heinsohni,Australian Snubfin Dolphin,Mammals,Vulnerable,5,2,7
+Pachycephala rufogularis,Red-lored Whistler,Birds,Vulnerable,7,3,287
+Papasula abbotti,Abbott's Booby,Birds,Endangered,3,1,1359
+Parantechinus apicalis,Dibbler,Mammals,Endangered,14,1,28
+Pedionomus torquatus,Plains-wanderer,Birds,Endangered,22,3,55
+Perameles bougainville,Western Barred Bandicoot,Mammals,Vulnerable,10,2,22
+Perameles gunnii,Eastern Barred Bandicoot,Mammals,Vulnerable,39,4,131
+Petauroides volans,Southern Greater Glider,Mammals,Vulnerable,56,12,658
+Petrogale lateralis,"Black-flanked Rock-wallaby, Moororong, Black-footed Rock Wallaby",Mammals,Vulnerable,10,2,41
+Petrogale sharmani,Sharman's Rock-wallaby,Mammals,Vulnerable,3,1,8
+Phascolarctos cinereus,Koala,Mammals,Vulnerable,45,11,456
+Philoria frosti,Baw Baw Frog,Amphibians,Critically Endangered,12,2,346
+Philoria kundagungan,Red and Yellow Mountain Frog,Amphibians,Endangered,2,1,2
+Philoria richmondensis,Richmond Range Mountain Frog,Amphibians,Endangered,3,1,3
+Potorous longipes,Long-footed Potoroo,Mammals,Vulnerable,6,1,6
+Pseudemydura umbrina,Western Swamp Turtle,Reptiles,Critically Endangered,39,1,78
+Pseudocheirus occidentalis,"Western Ringtail Possum, Ngwayir, Womp, Woder, Ngoor, Ngoolangit",Mammals,Critically Endangered,28,1,84
+Pseudomys calabyi,Kakadu Pebble-mound Mouse,Mammals,Vulnerable,9,4,45
+Pseudomys fieldi,"Shark Bay Mouse, Djoongari, Alice Springs Mouse",Mammals,Vulnerable,7,2,11
+Pseudomys fumeus,"Konoom, Smoky Mouse",Mammals,Vulnerable,18,1,18
+Pseudomys novaehollandiae,New Holland Mouse,Mammals,Vulnerable,18,2,60
+Pseudomys oralis,Hastings River Mouse,Mammals,Vulnerable,21,2,44
+Pseudomys shortridgei,Heath Rat,Mammals,Endangered,14,1,447
+Pseudophryne corroboree,Southern Corroboree Frog,Amphibians,Critically Endangered,20,1,233
+Pseudophryne pengilleyi,Northern Corroboree Frog,Amphibians,Critically Endangered,36,2,1028
+Pterodroma leucoptera,Australian Gould's Petrel,Birds,Vulnerable,15,2,22
+Pteropus conspicillatus,Spectacled Flying-fox,Mammals,Endangered,11,8,440
+Pteropus natalis,Christmas Island Flying Fox,Mammals,Vulnerable,5,1,530
+Pteropus poliocephalus,Grey-headed Flying-fox,Mammals,Vulnerable,11,55,3216
+Sarcophilus harrisii,Tasmanian Devil,Mammals,Endangered,37,10,5886
+Sminthopsis fuliginosus,Kangaroo Island Dunnart,Mammals,Critically Endangered,3,1,104
+Sousa sahulensis,"Australian Hump-backed Dolphin, Australian Humpback Dolphin",Mammals,Vulnerable,2,1,2
+Spicospina flammocaerulea,Sunset Frog,Amphibians,Endangered,21,2,203
+Stagonopleura guttata,Diamond Firetail,Birds,Vulnerable,23,64,7299
+Sternula nereis,Australian Fairy Tern,Birds,Vulnerable,11,3,434
+Stipiturus mallee,Mallee Emu-wren,Birds,Endangered,7,2,172
+Taudactylus eungellensis,Eungella Dayfrog,Amphibians,Endangered,5,1,31
+Taudactylus pleione,Kroombit Tinker Frog,Amphibians,Critically Endangered,5,1,5
+Taudactylus rheophilus,Northern Tinker Frog,Amphibians,Critically Endangered,3,1,3
+Thalassarche chrysostoma,Grey-headed Albatross,Birds,Endangered,26,1,26
+Tiliqua adelaidensis,Pygmy Bluetongue,Reptiles,Endangered,7,1,7
+Varanus mertensi,Mertens's Water Goanna,Reptiles,Endangered,8,2,11
+Varanus mitchelli,Mitchell's Water Goanna,Reptiles,Critically Endangered,8,1,8
+Xeromys myoides,False Water-rat,Mammals,Vulnerable,7,2,14
+Zanda baudinii,Baudin's Black-Cockatoo,Birds,Critically Endangered,11,3,484
+Zanda latirostris,Carnaby's Black-Cockatoo,Birds,Endangered,11,3,1461
+Zyzomys maini,Arnhem Land Rock-rat,Mammals,Vulnerable,8,3,45

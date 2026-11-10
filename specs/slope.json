@@ -1,20 +1,161 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": { "text": "Slope chart: who is recovering, who is sliding?", "subtitle": "PLACEHOLDER values. Each line is one species, 1990 to 2020" },
-  "width": 360,
-  "height": 320,
-  "data": { "url": "data/PLACEHOLDER_slope.csv" },
-  "encoding": {
-    "x": { "field": "year", "type": "ordinal", "axis": { "labelAngle": 0, "title": null, "labelFontSize": 13 } },
-    "y": { "field": "population", "type": "quantitative", "title": "Population index (1990 = 100)" },
-    "color": { "field": "direction", "type": "nominal", "scale": { "domain": ["Recovering", "Declining"], "range": ["#1f6f78", "#c8402b"] }, "title": null }
+  "title": {
+    "text": "Are threatened animal populations recovering or declining?",
+    "subtitle": [
+      "Share of Endangered and Critically Endangered species by population trend.",
+      "Centred on species with unknown or stable trajectories. Hover for details."
+    ],
+    "anchor": "start",
+    "font": "Fraunces, Georgia, serif",
+    "fontSize": 17,
+    "subtitleColor": "#566a6e"
+  },
+  "width": "container",
+  "height": 300,
+  "padding": 5,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "data": {
+    "url": "data/chordata_global_trends.csv"
   },
   "layer": [
-    { "mark": { "type": "line", "point": true, "strokeWidth": 2.5 }, "encoding": { "detail": { "field": "species", "type": "nominal" } } },
     {
-      "transform": [{ "filter": "datum.year == 2020" }],
-      "mark": { "type": "text", "align": "left", "dx": 8, "fontSize": 12 },
-      "encoding": { "text": { "field": "species" } }
+      "mark": {
+        "type": "bar",
+        "height": { "band": 0.68 },
+        "stroke": "white",
+        "strokeWidth": 1.5,
+        "cornerRadius": 2
+      },
+      "encoding": {
+        "y": {
+          "field": "group",
+          "type": "nominal",
+          "sort": ["Amphibians", "Mammals", "Birds", "Reptiles", "Fish"],
+          "title": null,
+          "axis": {
+            "labelFontSize": 13,
+            "labelFontWeight": "bold",
+            "labelColor": "#14262b",
+            "labelPadding": 10,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "x": {
+          "field": "x0",
+          "type": "quantitative",
+          "title": "Share of threatened species (EN + CR)",
+          "axis": {
+            "format": ".0%",
+            "labelExpr": "format(abs(datum.value), '.0%')",
+            "titleColor": "#566a6e",
+            "labelColor": "#566a6e",
+            "gridColor": "#e6eceb"
+          }
+        },
+        "x2": {
+          "field": "x1"
+        },
+        "color": {
+          "field": "trend",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Decreasing", "Unknown", "Increasing"],
+            "range": ["#bd0f16", "#cbd5d3", "#579642"]
+          },
+          "legend": {
+            "title": "",
+            "orient": "top",
+            "offset":0,
+            "direction": "horizontal",
+            "symbolType": "square",
+            "symbolSize": 180,
+            "labelFontSize": 12,
+            "titleFontSize": 12,
+            "labelColor": "#14262b",
+            "titleColor": "#14262b"
+          }
+        },
+        "tooltip": [
+          { "field": "group", "type": "nominal", "title": "Animal group" },
+          { "field": "trend", "type": "nominal", "title": "Population trend" },
+          { "field": "count", "type": "quantitative", "title": "Species with this trend", "format": "," },
+          { "field": "total", "type": "quantitative", "title": "Total threatened in group", "format": "," },
+          { "field": "pct", "type": "quantitative", "title": "Share of group", "format": ".1%" }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "baseline": "middle",
+        "align": "center",
+        "dx": {
+          "expr": "datum.trend === 'Unknown' ? 18 : 0"
+        },
+        "fontSize": 11,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "y": {
+          "field": "group",
+          "type": "nominal",
+          "sort": ["Amphibians", "Mammals", "Birds", "Reptiles", "Fish"]
+        },
+        "x": {
+          "field": "x_mid",
+          "type": "quantitative"
+        },
+        "text": {
+          "condition": {
+            "test": "datum.trend === 'Unknown' ? datum.pct >= 0.10 : datum.pct >= 0.04",
+            "field": "pct",
+            "type": "quantitative",
+            "format": ".0%"
+          },
+          "value": ""
+        },
+        "color": {
+          "condition": {
+            "test": "datum.trend === 'Unknown'",
+            "value": "#14262b"
+          },
+          "value": "white"
+        },
+        "tooltip": [
+          { "field": "group", "type": "nominal", "title": "Animal group" },
+          { "field": "trend", "type": "nominal", "title": "Population trend" },
+          { "field": "count", "type": "quantitative", "title": "Species with this trend", "format": "," },
+          { "field": "total", "type": "quantitative", "title": "Total threatened in group", "format": "," },
+          { "field": "pct", "type": "quantitative", "title": "Share of group", "format": ".1%" }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [{ "zero": 0 }]
+      },
+      "mark": {
+        "type": "rule",
+        "color": "#14262b",
+        "strokeWidth": 1.5,
+        "strokeDash": [4, 3]
+      },
+      "encoding": {
+        "x": {
+          "field": "zero",
+          "type": "quantitative"
+        }
+      }
     }
-  ]
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
 }

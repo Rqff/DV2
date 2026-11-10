@@ -6,7 +6,7 @@
   <title>Endangered Species | FIT3179 Data Visualisation 2</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
@@ -16,105 +16,199 @@
 
 <header class="hero">
   <h1>Are we running out of time?</h1>
-  <p class="lead"></p>
 </header>
 
 <main>
-  <!-- ADD A CHART: copy one <section>, change the text, point data-spec at a new JSON file in /specs -->
 
-  <section>
-    <h2>The big picture: where are species most at risk?</h2>
-    <p>Story text goes here.</p>
+  <!-- 1. THE HOOK: where is the risk? -->
+  <section class="cols-2">
+    <div class="block span">
+      <h2>The big picture: why should we care?</h2>
+    </div>
+    <p>In 2016, the Bramble Cay melomys, a small rodent from a sandbar on the Great Barrier Reef, was declared <span class='ex'>extinct</span> after rising seas washed over its home. It was widely reported as the first mammal lost to human-caused climate change. This is the story of the species still standing where it stood.</p>
+    <p>Since European settlement, Australia has lost more mammal species than any other country. The survivors are not safe either. Look at where the threatened species cluster: <strong>Brazil</strong>, <strong>China</strong> and <strong>India</strong> stand out. Mass pollution from factories, habitat devastation to make space for agriculture and rubbish clogging the waters.</p>
+    <div class="block span">
+      <figure>
+        <div id="map-toggle"></div>
+        <div class="chart" data-spec="specs/choropleth.json"></div>
+        <figcaption>Source: IUCN Red List of Threatened Species</figcaption>
+      </figure>
+    </div>
+      
+
+  </section>
+
+  <!-- 2. THE SCALE: how many? -->
+  <section class="cols-2">
+    <div class="block span">
+      <h2>How bad is it?</h2>
+    </div>
     <figure>
-      <div class="chart" data-spec="specs/choropleth.json"></div>
-      <figcaption>Source: PLACEHOLDER data. Replace with real source and URL.</figcaption>
+      <div class="chart" data-spec="specs/waffle.json"></div>
+      <figcaption>Source: The Australian Threatened Species Index 2025</figcaption>
+    </figure>
+    <div class="block">
+      <p>Imagine walking through the bush and meeting 100 of the Australian species scientists are tracking. About 68 of them would be in trouble: <span class='vu'>vulnerable</span>, <span class='en'>endangered</span> or <span class='cr'>critically endangered</span>. More than <strong>two thirds</strong> of monitored species are struggling, where there is an equal amount of <span class='cr'>critically endangered</span> species as there are species of <span class='lc'>least concern.</span></p>
+      <p>How many more have to go <span class="ex">extinct</span> before more is done about it?</p>
+    </div>
+    <div class="block">
+      <p>Each individual species that is threatened is on display here. If nothing changes then it is very likely some of these dots will disappear in the next decade, and once they are gone they never come back. However particular groups struggle the most, like <strong>Small Mammals</strong> and <strong>Amphibians</strong>.</p>
+      <p><strong>Amphibians</strong> soak up pollutants in the air and water around them, and they birth their young in the very same toxic sludge that is killing them.</p>
+      <p><strong>Small mammals</strong> face introduced species that they never evolved to go up against, and as the invasive species wreak havoc through native populations the problem only accelerates.</p>
+    </div>
+      <div class="chart" data-spec="specs/jitter.json"></div>
+      <figcaption>Source: The Australian Threatened Species Index 2025</figcaption>
     </figure>
   </section>
 
-  <section>
-    <h2>Hotspots in detail</h2>
-    <p>Why a second map helps: point-level detail the country shading hides.</p>
+  <!-- 3. THE VICTIMS: who is affected? -->
+  <section class="cols-2">
+    <div class="block span">
+      <h2>Which animals are in the most trouble?</h2>
+    </div>
+    <div class="block">
+      <p>Looking globally we can see that the highest risk animal groups change. <strong>Fish</strong> have the most <span class="en">endangered</span> and <span class="cr">critically endangered</span> species, followed closely by <Strong>Amphibians</Strong>, demonstrating the damaging trend to waterbound animals.</p>
+      <p><strong>Birds</strong> have the most <span class='ex'>extinct</span> species as a result of historical deforestation practices that have since been remedied.</p>
+    </div>
     <figure>
-      <div class="chart" data-spec="specs/symbols.json"></div>
-      <figcaption>Source: PLACEHOLDER data.</figcaption>
+      <div class="chart" data-spec="specs/heatmap_class.json"></div>
+      <figcaption>Source: IUCN Red List of Threatened Species</figcaption>
     </figure>
+    <figure>
+      <div class="chart" data-spec="specs/heatmap_habitats.json"></div>
+      <figcaption>Source: IUCN Red List of Threatened Species</figcaption>
+    </figure>
+    <div class="block">
+      <p>The habitats that have the greatest biodiversity, <strong>Wetlands</strong> and <strong>Forests</strong>, also have the greatest number of species at risk.</p>
+      <p>They are also the most frequently polluted and decimated of any habitat thanks to modern human-introduced threats like: deforestation, freshwater pollution, and microplastics.</p>
+      <p>Habitats rich in variety of flora and fauna are the most fragile to damage from imbalance in the ecosystem. A species going <span class='ex'>extinct</span> can have cascading effects on the whole biotic network.</p>
+    </div>
   </section>
 
-  <section>
-    <h2>Which animal groups are in the most trouble?</h2>
-    <p>Explain the status levels (Vulnerable, Endangered, Critically Endangered) in plain words before the chart.</p>
-    <figure>
-      <div class="chart" data-spec="specs/heatmap.json"></div>
-      <figcaption>Source: PLACEHOLDER data.</figcaption>
-    </figure>
+  <section class="cols-2">
+    <div class="block span">
+      <h2>Where do threatened animals live?</h2>
+    </div>
+    <div class="block">
+      <p>Looking at specific sub-categories of habitats the trend ecological damage can be better understood. The most bioavailable habitats consequently have the greatest span of species. Despite the abundance of resources that allowed these environments to flourish, they are at the most risk due to external factors.</p>
+    </div>
+    <div class="block">
+      <p><strong>Permanent Rivers, Streams and Creeks</strong> have the most <span class='en'>endangered</span> and <span class='cr'>critically endangered</span> species of any habitat. They are incredibly dense with life as freshwater only accounts for <strong>2%</strong> of the world's water, and yet has roughly the same amount of species as all of the world's oceans. </p> 
+    </div>
+    <div class="block span">
+      <figure>
+        <div class="chart" data-spec="specs/treemap.json" data-title="Treemap or Sankey" data-idiom="Needs full Vega, e.g. species by class, order, then threat level"></div>
+        <figcaption>Source: IUCN Red List of Threatened Species</figcaption>
+      </figure>
+    </div>
   </section>
 
-  <section>
-    <h2>Is it getting better or worse?</h2>
-    <p>Click a group in the legend to highlight it.</p>
-    <figure>
-      <div class="chart" data-spec="specs/trend.json"></div>
-      <figcaption>Source: PLACEHOLDER data.</figcaption>
-    </figure>
+  <section class="cols-2">
+    <div class="block span">
+      <h2>Zooming in: who is inside each group?</h2>
+    </div>
+    <div class="block">
+      <p>A threatened animal is rarely threatened alone, because its home is too. As animals' habitats are destroyed, their numbers freefall. And it also works in reverse, if an animal's count is dwindling it's often traced back to habitat devastation.</p>
+    </div>
+    <div class="block">
+      <p>The connections between <span class='en'>endangered</span>, <span class='cr'>critically endangered</span> and <span class='ex'>extinct</span> species, their respective habitats, and their taxonomic group highlight the damage polluted <strong>rainforests</strong> and <strong>wetlands</strong> has on the <strong>Amphibian</strong> population.</p>
+    </div>
+    <div class="block span">
+      <figure>
+        <div class="chart" data-spec="specs/sankey.json"></div>
+        <figcaption>Source: IUCN Red List of Threatened Species</figcaption>
+      </figure>
+    </div>
+
   </section>
 
-    <section>
-    <h2>Australia, state by state</h2>
-    <p>Tile grid map: every state gets a same-sized tile, so small states are not lost.</p>
-    <figure>
+  <!-- 5. CLOSE TO HOME: states -->
+  <section class="cols-2">
+    <div class="block span">
+      <h2>Australia, state by state</h2>
+    </div>
+    <div class=block>
+      <figure>
+      <div id="tilemap-toggle"></div>
       <div class="chart" data-spec="specs/tilemap.json"></div>
-      <figcaption>Source: PLACEHOLDER data.</figcaption>
+      <figcaption>Source: The Australian Threatened Species Index 2025</figcaption>
+      </figure>
+    </div>
+    <div class="block">
+      <p>So what does this mean for <strong>you?</strong> Every state and territory has threatened species in its backyard.</p>
+      <p><strong>The Australian Capital Territory</strong> has the most when area-normalised as it shares common species with <strong>New South Wales</strong> and <strong>Victoria</strong> whilst having a tiny area of roughly <strong>2,400 km²</strong>.</p>
+      <p>For all the major states <strong>Victoria</strong> has a significant lead with the highest area-normalised incidence of threatened species. <strong>Victoria</strong> has one of the highest proportions of urbanised land, with a similar level of infrastructure to <strong>New South Wales</strong> despite being <strong>3.5x smaller</strong> by area.</p>
+      <p>But are the urban areas where we see animals struggling?</p>
+    </div>
+    <div class="block">
+    <p><span class='ex'>Extinction</span> rarely has a single villain. The most obvious contributing factor in Victoria is introduced predators like <strong>cats, foxes,</strong> and the <strong>infamous cane toad</strong>.</p>
+    <p>But there are less obvious factors such as the <strong>chytrid fungus</strong> that has devastated <strong>frogs</strong>.</p>
+    <p>However the factor that is a threat everywhere you go: <strong>climate change</strong>. There are more <strong>bushfires, droughts, floods and cyclones</strong> now than any other time in modern human history.</p>
+    <p>Threatened species are all across <strong>Victoria</strong> and it is because climate change does not discriminate, it affects <strong>everyone</strong>.</p>
+    </div>
+    <div class="block">
+      <figure>
+      <div id="hexbin-toggle"></div>
+      <div class="chart" data-spec="specs/hexbin.json"></div>
+      <figcaption>Source: The Australian Threatened Species Index 2025</figcaption>
     </figure>
+    </div>
   </section>
 
-  <section>
-    <h2>What is driving the decline?</h2>
-    <p>Thicker lines mean a threat hits that animal group harder. Hover over a circle for details.</p>
-    <figure>
-      <div class="chart" data-spec="specs/network.json"></div>
-      <figcaption>Source: PLACEHOLDER data.</figcaption>
-    </figure>
+  <!-- 7. THE BLIND SPOT: monitoring -->
+  <section class="cols-2">
+    <div class="block span">
+      <h2>Are we watching closely enough?</h2>
+      <figure>
+        <div id="stream-toggle"></div>
+        <div class="chart" data-spec="specs/stream.json"></div>
+        <figcaption>Source: The Australian Threatened Species Index 2025</figcaption>
+      </figure>
+    </div>
+    
+    <p>You cannot protect what you do not count, and a species nobody is watching can slip away unnoticed. Animal studies are getting more frequent and more detailed every year. And now is the most we have ever known about the world and animals around us in any time in history.</p>
+    <p>The number of animal studies on species classified as <span class='cr'>critically endangered</span> are far less than those of <span class='lc'>least concern</span>. This is because they are easier to find and observe in the wild, but also because there are still new species being <strong>discovered everyday</strong>.</p>
+
   </section>
 
-  <section>
-    <h2>How fast is the list growing?</h2>
-    <p>Each stream is one risk level. A thickening stream means more species are slipping into it.</p>
-    <figure>
-      <div class="chart" data-spec="specs/stream.json"></div>
-      <figcaption>Source: PLACEHOLDER data.</figcaption>
-    </figure>
-  </section>
-
-  <section>
-    <h2>Who is bouncing back?</h2>
-    <p>Species heading up are conservation wins. Species heading down need help now.</p>
-    <figure>
+  <!-- 8. THE HOPE -->
+  <section class="cols-2">
+    <div class="block span">
+      <h2>Who is bouncing back?</h2>
+    </div>
+    <p><span class='ex'>Extinction</span> is not always the end of the story. Leadbeater's possum was written off as <span class='ex'>extinct</span> for decades, until it turned up <strong>alive</strong> in <strong>Victoria</strong> in 1961. It is still <span class='cr'>critically endangered</span> today.</p>
+    <p><strong>Birds</strong> have seen the strongest return in numbers, whilst <strong>Amphibians</strong> are falling the most. We learned from losing so many <strong>Birds</strong> to <span class='ex'>extinction</span>, hopefully we can learn for others too.</p>
+    <div class="block span">
+      <figure>
       <div class="chart" data-spec="specs/slope.json"></div>
-      <figcaption>Source: PLACEHOLDER data.</figcaption>
-    </figure>
+      <figcaption>Source: IUCN Red List of Threatened Species</figcaption>
+      </figure>
+    </div>
+    
   </section>
 
-  <section>
-    <h2>Invasive Species</h2>
-    <p>Where animals have been introduced and how they affect the native wildlife.</p>
-    <figure>
-      <div class="chart" data-spec="specs/routes.json"></div>
-      <figcaption>Source: PLACEHOLDER data.</figcaption>
-    </figure>
+  <!-- 9. THE CLOSE -->
+  <section class="cols-2">
+    <h2 class="block span">So, are we running out of time?</h2>
+    <div class="block">
+      <p>The honest answer is that for some species, <strong>unfortunately yes</strong>.</p>
+      <p><strong>Amphibians</strong> are under the most pressure, and there are still gaps in what we know. </p>
+    </div>
+    <div class="block">
+      <p>But the same data shows species recovering when people <strong>commit to protecting them</strong></p>
+      <p>The melomys was gone before we could act. Most of the animals in these charts are not.</p>
+    </div>
   </section>
 
-  <section>
-    <h2>Chart slot 10</h2>
-    <figure>
-      <div class="chart" data-spec="specs/not-built-yet.json" data-title="Treemap or Sankey" data-idiom="Needs full Vega, e.g. species by class, order, then threat level"></div>
-    </figure>
-  </section>
 </main>
 
 <footer>
-  <p><strong>Author:</strong> Rafferty Barry, 33116776, Last updated: 19/10/26.</p>
-  <p><strong>Data sources:</strong> list each dataset with author, year and URL.</p>
-  <p><strong>AI acknowledgement:</strong><br>Claude Sonnet 5.5 - Used to make HTML template and placeholder data </p>
+  <p><strong>Author:</strong> Rafferty Barry - 33116776, Monash University, FIT3179 Data Visualisation 2, Semester 2 2026. Last updated: DATE.</p>
+  <p><strong>Data sources:</strong></p>
+  <p>IUCN Red List of Threatened Species - Endangered, Critically Endangered and Extinct Chordates</p>
+  <p>The Australian Threatened Species Index 2025, with 2020 as the reference year</p>
+  <p><strong>AI acknowledgement:</strong><br>Claude Sonnet 5.5 - Used to make HTML template, CSS styling for interactive buttons, data formatting</p>
+  <p>Gemini Pro 3.1 - Used as Vega and Vega-lite documentation, keyword look-ups and .json syntax guide.</p>
 </footer>
 
 <script src="main.js"></script>

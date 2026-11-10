@@ -1,0 +1,52 @@
+source,target,value,status,c0,c1,sy,ty,w
+Forest,Endangered,2516,Endangered,0,1,0.0,0.006,0.18306
+Wetlands (inland),Endangered,2286,Endangered,0,1,0.30878,0.18906,0.16632
+Artificial - land,Endangered,602,Endangered,0,1,0.59464,0.35538,0.0438
+Shrubland,Endangered,490,Endangered,0,1,0.66768,0.39918,0.03565
+Marine,Endangered,422,Endangered,0,1,0.73636,0.43483,0.0307
+Grassland,Endangered,416,Endangered,0,1,0.79682,0.46554,0.03027
+Rocky areas,Endangered,198,Endangered,0,1,0.85567,0.49581,0.01441
+Artificial - water and marine,Endangered,191,Endangered,0,1,0.88972,0.51021,0.0139
+Savanna,Endangered,132,Endangered,0,1,0.92093,0.52411,0.0096
+Other / unknown,Endangered,43,Endangered,0,1,0.94755,0.53371,0.00313
+Caves and underground,Endangered,87,Endangered,0,1,0.97105,0.53684,0.00633
+Desert,Endangered,54,Endangered,0,1,0.99287,0.54317,0.00393
+Forest,Critically endangered,1403,Critically endangered,0,1,0.18306,0.6071,0.10208
+Wetlands (inland),Critically endangered,1344,Critically endangered,0,1,0.4751,0.70918,0.09779
+Artificial - land,Critically endangered,228,Critically endangered,0,1,0.63844,0.80696,0.01659
+Shrubland,Critically endangered,237,Critically endangered,0,1,0.70333,0.82355,0.01724
+Marine,Critically endangered,224,Critically endangered,0,1,0.76706,0.8408,0.0163
+Grassland,Critically endangered,196,Critically endangered,0,1,0.82708,0.8571,0.01426
+Rocky areas,Critically endangered,101,Critically endangered,0,1,0.87008,0.87136,0.00735
+Artificial - water and marine,Critically endangered,70,Critically endangered,0,1,0.90362,0.8787,0.00509
+Savanna,Critically endangered,55,Critically endangered,0,1,0.93053,0.8838,0.004
+Other / unknown,Critically endangered,27,Critically endangered,0,1,0.95068,0.8878,0.00196
+Caves and underground,Critically endangered,47,Critically endangered,0,1,0.97738,0.88976,0.00342
+Desert,Critically endangered,32,Critically endangered,0,1,0.9968,0.89318,0.00233
+Forest,Extinct,160,Extinct,0,1,0.28514,0.95551,0.01164
+Wetlands (inland),Extinct,134,Extinct,0,1,0.57289,0.96715,0.00975
+Artificial - land,Extinct,9,Extinct,0,1,0.65503,0.9769,0.00065
+Shrubland,Extinct,52,Extinct,0,1,0.72058,0.97756,0.00378
+Marine,Extinct,20,Extinct,0,1,0.78336,0.98134,0.00146
+Grassland,Extinct,32,Extinct,0,1,0.84135,0.9828,0.00233
+Rocky areas,Extinct,4,Extinct,0,1,0.87743,0.98512,0.00029
+Artificial - water and marine,Extinct,3,Extinct,0,1,0.90871,0.98541,0.00022
+Savanna,Extinct,14,Extinct,0,1,0.93453,0.98563,0.00102
+Other / unknown,Extinct,88,Extinct,0,1,0.95264,0.98665,0.0064
+Caves and underground,Extinct,1,Extinct,0,1,0.9808,0.99305,7e-05
+Desert,Extinct,12,Extinct,0,1,0.99913,0.99313,0.00087
+Endangered,Mammals,1059,Endangered,1,2,0.006,0.006,0.07705
+Critically endangered,Mammals,393,Critically endangered,1,2,0.6071,0.08305,0.02859
+Extinct,Mammals,137,Extinct,1,2,0.95551,0.11164,0.00997
+Endangered,Birds,820,Endangered,1,2,0.08305,0.15161,0.05966
+Critically endangered,Birds,461,Critically endangered,1,2,0.63569,0.21127,0.03354
+Extinct,Birds,211,Extinct,1,2,0.96548,0.24481,0.01535
+Endangered,Reptiles,1264,Endangered,1,2,0.14271,0.29017,0.09197
+Critically endangered,Reptiles,663,Critically endangered,1,2,0.66923,0.38213,0.04824
+Extinct,Reptiles,31,Extinct,1,2,0.98083,0.43037,0.00226
+Endangered,Amphibians,2558,Endangered,1,2,0.23468,0.46263,0.18611
+Critically endangered,Amphibians,1475,Critically endangered,1,2,0.71747,0.64874,0.10732
+Extinct,Amphibians,55,Extinct,1,2,0.98309,0.75606,0.004
+Endangered,Fish,1736,Endangered,1,2,0.42079,0.79006,0.12631
+Critically endangered,Fish,972,Critically endangered,1,2,0.82479,0.91637,0.07072
+Extinct,Fish,95,Extinct,1,2,0.98709,0.98709,0.00691

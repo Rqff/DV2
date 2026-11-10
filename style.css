@@ -8,22 +8,138 @@
 * { box-sizing: border-box; }
 body {
   margin: 0; background: var(--paper); color: var(--ink);
-  font-family: "Source Sans 3", system-ui, sans-serif; font-size: 1.1rem; line-height: 1.55;
+  font-family: "DM Sans", system-ui, sans-serif; font-size: 1.4rem; line-height: 1.55;
 }
 h1, h2 { font-family: "Fraunces", Georgia, serif; line-height: 1.15; }
-.hero { max-width: 960px; margin: 0 auto; padding: 4rem 1.5rem 2rem; border-bottom: 4px solid var(--accent); }
-.hero h1 { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 800; margin: 0 0 1rem; max-width: 20ch; }
+.hero { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem 2rem; border-bottom: 4px solid var(--accent); }
+.hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 800; margin: 0 0 1rem; max-width: 20ch; }
 .lead { font-size: 1.25rem; color: var(--muted); max-width: 60ch; margin: 0; }
-main, footer { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
-section { padding: 2.5rem 0; border-bottom: 1px solid var(--rule); }
-section h2 { font-size: 1.7rem; margin: 0 0 .5rem; }
-section p { max-width: 62ch; margin: 0 0 1.25rem; }
-figure { margin: 0; }
-figcaption, footer { font-size: .9rem; color: var(--muted); }
-.chart { width: 100%; min-height: 120px; }
+main, footer { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* ---------- Layout system ---------- */
+section {
+  display: grid;
+  gap: 1.5rem 2.5rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+section.cols-1   { grid-template-columns: 1fr; }
+section.cols-2   { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.block { min-width: 0; }                 /* stops wide charts blowing the grid out */
+.block.span { grid-column: 1 / -1; }     /* block runs across all columns */
+.block.center { align-self: center; }    /* vertically centre against its neighbour */
+.block > :first-child { margin-top: 0; }
+.block > :last-child { margin-bottom: 0; }
+
+h2 { font-size: 2.5rem; margin: 0 0 .5rem; }
+.block p { max-width: 62ch; margin: 0 0 1rem; }
+figure { margin: 0; position: relative; }
+figcaption, footer { font-size: 1rem; color: var(--muted); }
+
+/* Optional: a big headline number, e.g. "1 in 4" */
+.stat { font-family: "Fraunces", Georgia, serif; font-size: 3.5rem; font-weight: 800; color: var(--accent); line-height: 1; margin: 0; }
+
+.chart { max-width: 100%; min-height: 120px; overflow-x: hidden; }
 .chart.placeholder {
   display: flex; flex-direction: column; gap: .25rem; align-items: flex-start; justify-content: center;
   min-height: 220px; padding: 1.5rem; border: 2px dashed var(--rule); color: var(--muted);
 }
 .chart.placeholder strong { color: var(--ink); }
 footer { padding-top: 2rem; padding-bottom: 3rem; }
+
+
+/* Narrow screens: every layout stacks in source order */
+@media (max-width: 800px) {
+  section[class*="cols-"] { grid-template-columns: 1fr; }
+}
+
+/* Custom Checkbox Styling */
+#map-toggle {
+position: absolute;
+  top: 5px;    /* Pushes it down from the top edge */
+  right: 15px;  /* Pushes it in from the right edge */
+  z-index: 10;  /* Forces the HTML element to sit visually above the Vega SVG canvas */
+}
+
+#hexbin-toggle
+{
+  position: absolute;
+  top: 70px;    /* Pushes it down from the top edge */
+  right: 15px;  /* Pushes it in from the right edge */
+  z-index: 10;  /* Forces the HTML element to sit visually above the Vega SVG canvas */
+}
+
+#stream-toggle
+{
+  position: absolute;
+  top: 0px;    /* Pushes it down from the top edge */
+  right: 22px;  /* Pushes it in from the right edge */
+  z-index: 10;  /* Forces the HTML element to sit visually above the Vega SVG canvas */
+}
+
+
+#tilemap-toggle {
+position: absolute;
+  bottom: 100px;    /* Pushes it down from the top edge */
+  left: 0px;  /* Pushes it in from the right edge */
+  z-index: 10;  /* Forces the HTML element to sit visually above the Vega SVG canvas */
+}
+
+.vega-bind {
+  display: inline-flex;
+  align-items: center;
+}
+
+.vega-bind label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  border: 2px solid var(--rule);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem; /* Creates the pill shape */
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.vega-bind label:hover {
+  border-color: var(--accent);
+}
+
+.vega-bind input[type="checkbox"] {
+  accent-color: var(--accent); /* Changes the default blue tick to your accent color */
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+  margin: 0;
+}
+
+.lc {
+    color: green;
+    font-weight: bold;
+}
+
+.vu {
+    color: goldenrod;
+    font-weight: bold;
+}
+
+.en {
+    color: darkorange;
+    font-weight: bold;
+}
+
+.cr {
+    color: darkred;
+    font-weight: bold;
+}
+
+.ex {
+    color: navy;
+    font-weight: bold;
+}

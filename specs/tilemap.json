@@ -1,23 +1,166 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": { "text": "Tile grid map of Australia", "subtitle": "PLACEHOLDER values. Each tile is one state or territory, placed roughly where it sits on the map" },
-  "width": { "step": 160 },
-  "height": { "step": 160 },
-  "data": { "url": "data/PLACEHOLDER_states.csv" },
+  "title": {
+    "text": "Threatened species in each state",
+    "subtitle": [
+      "Vulnerable, endangered and critically endangered",
+      "species in each state or territory."
+    ]
+  },
+  "width": {
+    "step": 120
+  },
+  "height": {
+    "step": 120
+  },
+  "data": {
+    "url": "data/tsx_state_counts.csv"
+  },
+  "params": [
+    {
+      "name": "normalise_tile",
+      "value": false,
+      "bind": {
+        "input": "checkbox",
+        "name": "Normalise per 10,000 km²",
+        "element": "#tilemap-toggle"
+      }
+    }
+  ],
+  "transform": [
+    {
+      "lookup": "State",
+      "from": {
+        "data": {
+          "values": [
+            { "State": "NT",  "col": 1, "row": 0, "area": 1349129 },
+            { "State": "QLD", "col": 2, "row": 0, "area": 1730648 },
+            { "State": "WA",  "col": 0, "row": 1, "area": 2529875 },
+            { "State": "SA",  "col": 1, "row": 1, "area": 983482 },
+            { "State": "NSW", "col": 2, "row": 1, "area": 801150 },
+            { "State": "ACT", "col": 3, "row": 1, "area": 2358 },
+            { "State": "VIC", "col": 2, "row": 2, "area": 227416 },
+            { "State": "TAS", "col": 2, "row": 3, "area": 68401 }
+          ]
+        },
+        "key": "State",
+        "fields": ["col", "row", "area"]
+      }
+    },
+    {
+      "filter": "isValid(datum.col)"
+    },
+    {
+      "calculate": "(datum.threatened / datum.area) * 10000",
+      "as": "density"
+    },
+    {
+      "calculate": "normalise_tile === true ? datum.density : datum.threatened",
+      "as": "display_value"
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "max",
+          "field": "display_value",
+          "as": "max_display"
+        }
+      ]
+    }
+  ],
   "encoding": {
-    "x": { "field": "col", "type": "ordinal", "axis": null },
-    "y": { "field": "row", "type": "ordinal", "axis": null }
+    "x": {
+      "field": "col",
+      "type": "ordinal",
+      "axis": null
+    },
+    "y": {
+      "field": "row",
+      "type": "ordinal",
+      "axis": null
+    }
   },
   "layer": [
     {
-      "mark": { "type": "rect", "stroke": "white", "strokeWidth": 3 },
+      "mark": {
+        "type": "rect",
+        "stroke": "white",
+        "strokeWidth": 3
+      },
       "encoding": {
-        "color": { "field": "threatened", "type": "quantitative", "scale": { "scheme": "oranges" }, "title": "Threatened species" },
-        "tooltip": [{ "field": "state", "type": "nominal" }, { "field": "threatened", "type": "quantitative", "title": "Threatened species" }]
+        "color": {
+          "field": "display_value",
+          "type": "quantitative",
+          "scale": {
+            "scheme": "oranges"
+          },
+          "legend": {
+            "orient": "bottom",
+            "offset": 0,
+            "direction": "horizontal",
+            "gradientLength": {"expr": "width"},
+            "gradientThickness": 15,
+            "titleFontSize": 12,
+            "labelFontSize": 12
+          },
+          "title": "Threatened species"
+        },
+        "tooltip": [
+          { "field": "State", "type": "nominal", "title": "State" },
+          { "field": "threatened", "type": "quantitative", "title": "Threatened species" },
+          { "field": "area", "type": "quantitative", "title": "Area (sq km)", "format": "," },
+          { "field": "density", "type": "quantitative", "title": "Species per 10,000 km²", "format": ".2f" },
+          { "field": "CR", "type": "quantitative", "title": "Critically endangered" },
+          { "field": "EN", "type": "quantitative", "title": "Endangered" },
+          { "field": "VU", "type": "quantitative", "title": "Vulnerable" }
+        ]
       }
     },
-    { "mark": { "type": "text", "fontWeight": "bold", "dy": -8 }, "encoding": { "text": { "field": "state" }, "color": { "condition": { "test": "datum.threatened > 150", "value": "white" }, "value": "#14262b" } } },
-    { "mark": { "type": "text", "dy": 12 }, "encoding": { "text": { "field": "threatened" }, "color": { "condition": { "test": "datum.threatened > 150", "value": "white" }, "value": "#14262b" } } }
+    {
+      "mark": {
+        "type": "text",
+        "fontWeight": "bold",
+        "fontSize": 16,
+        "dy": -10
+      },
+      "encoding": {
+        "text": {
+          "field": "State"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.display_value > 0.55 * datum.max_display",
+            "value": "white"
+          },
+          "value": "#14262b"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 14,
+        "dy": 12
+      },
+      "encoding": {
+        "text": {
+          "field": "display_value",
+          "format": ".1f"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.display_value > 0.55 * datum.max_display",
+            "value": "white"
+          },
+          "value": "#14262b"
+        }
+        
+      }
+    }
   ],
-  "config": { "view": { "stroke": null } }
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
 }

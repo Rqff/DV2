@@ -1,0 +1,357 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Sankey-style flow: habitat to threat level to animal group. Layout is precomputed by prepare_groups.py.",
+  "width": "container",
+  "height": 620,
+  "padding": {
+    "top": 30,
+    "left": 5,
+    "right": 5,
+    "bottom": 50
+  },
+  "config": {
+    "text": {
+      "font": "DM Sans, system-ui, sans-serif"
+    },
+    "legend": {
+      "labelFont": "DM Sans, system-ui, sans-serif",
+      "titleFont": "DM Sans, system-ui, sans-serif"
+    },
+    "title": {
+      "subtitleFont": "DM Sans, system-ui, sans-serif"
+    }
+  },
+  "title": {
+    "text": "From habitat to threat level to animal group",
+    "subtitle": [
+      "Each band is a number of species.",
+      "A species living in several habitats flows through each of them."
+    ],
+    "anchor": "start",
+    "font": "Fraunces, Georgia, serif",
+    "fontSize": 17,
+    "subtitleColor": "#566a6e"
+  },
+  "signals": [
+    {
+      "name": "nodeW",
+      "value": 14
+    },
+    {
+      "name": "labelL",
+      "update": "min(200, width * 0.112)"
+    },
+    {
+      "name": "labelR",
+      "update": "min(200, width * 0.12)"
+    }
+  ],
+  "data": [
+    {
+      "name": "nodes",
+      "url": "data/chordata_global_sankey_nodes.csv",
+      "format": {
+        "type": "csv",
+        "parse": "auto"
+      }
+    },
+    {
+      "name": "links",
+      "url": "data/chordata_global_sankey_links.csv",
+      "format": {
+        "type": "csv",
+        "parse": "auto"
+      }
+    },
+    {
+      "name": "habitats",
+      "source": "nodes",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.kind === 'habitat'"
+        }
+      ]
+    },
+    {
+      "name": "statuses",
+      "source": "nodes",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.kind === 'status'"
+        }
+      ]
+    },
+    {
+      "name": "groups",
+      "source": "nodes",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.kind === 'group'"
+        }
+      ]
+    },
+    {
+      "name": "heads",
+      "values": [
+        {
+          "c": 0,
+          "t": "Where they live"
+        },
+        {
+          "c": 1,
+          "t": "How threatened"
+        },
+        {
+          "c": 2,
+          "t": "Animal group"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "linear",
+      "domain": [
+        0,
+        2
+      ],
+      "range": [
+        {
+          "signal": "labelL"
+        },
+        {
+          "signal": "width - labelR - nodeW"
+        }
+      ]
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "domain": [
+        0,
+        1
+      ],
+      "range": [
+        0,
+        {
+          "signal": "height"
+        }
+      ]
+    },
+    {
+      "name": "status",
+      "type": "ordinal",
+      "domain": [
+        "Endangered",
+        "Critically endangered",
+        "Extinct"
+      ],
+      "range": [
+        "#e27121",
+        "#a60f16",
+        "#000e4d"
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "fill": "status",
+      "orient": "none",
+      "legendX": 511,
+      "legendY": -90,
+      "direction": "vertical",
+      "titleAnchor": "middle",
+      "titleOrient": "left",
+      "titleFontSize": 12,
+      "titleColor": "#566a6e",
+      "labelFontSize": 12,
+      "labelColor": "#14262b",
+      "labelLimit": 0,
+      "symbolType": "square",
+      "symbolSize": 120,
+      "rowPadding": 10
+    }
+  ],
+  "marks": [
+    {
+      "type": "path",
+      "from": {
+        "data": "links"
+      },
+      "encode": {
+        "enter": {
+          "tooltip": {
+            "signal": "{'From': datum.source, 'To': datum.target, 'Species': datum.value}"
+          }
+        },
+        "update": {
+          "path": {
+            "signal": "'M' + (scale('x', datum.c0) + nodeW) + ',' + scale('y', datum.sy) + 'C' + ((scale('x', datum.c0) + nodeW + scale('x', datum.c1)) / 2) + ',' + scale('y', datum.sy) + ' ' + ((scale('x', datum.c0) + nodeW + scale('x', datum.c1)) / 2) + ',' + scale('y', datum.ty) + ' ' + scale('x', datum.c1) + ',' + scale('y', datum.ty) + 'L' + scale('x', datum.c1) + ',' + scale('y', datum.ty + datum.w) + 'C' + ((scale('x', datum.c0) + nodeW + scale('x', datum.c1)) / 2) + ',' + scale('y', datum.ty + datum.w) + ' ' + ((scale('x', datum.c0) + nodeW + scale('x', datum.c1)) / 2) + ',' + scale('y', datum.sy + datum.w) + ' ' + (scale('x', datum.c0) + nodeW) + ',' + scale('y', datum.sy + datum.w) + 'Z'"
+          },
+          "fill": {
+            "scale": "status",
+            "field": "status"
+          },
+          "fillOpacity": {
+            "value": 0.45
+          }
+        },
+        "hover": {
+          "fillOpacity": {
+            "value": 0.85
+          }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "from": {
+        "data": "nodes"
+      },
+      "encode": {
+        "enter": {
+          "tooltip": {
+            "signal": "{'Name': datum.name, 'Species': datum.value}"
+          }
+        },
+        "update": {
+          "x": {
+            "signal": "scale('x', datum.col)"
+          },
+          "width": {
+            "signal": "nodeW"
+          },
+          "y": {
+            "signal": "scale('y', datum.y0)"
+          },
+          "y2": {
+            "signal": "scale('y', datum.y1)"
+          },
+          "fill": [
+            {
+              "test": "datum.kind === 'status'",
+              "scale": "status",
+              "field": "name"
+            },
+            {
+              "test": "datum.kind === 'habitat'",
+              "value": "#6b8e91"
+            },
+            {
+              "value": "#14262b"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "habitats"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "scale('x', 0) - 6"
+          },
+          "y": {
+            "signal": "scale('y', (datum.y0 + datum.y1) / 2)"
+          },
+          "text": {
+            "signal": "datum.name"
+          },
+          "align": {
+            "value": "right"
+          },
+          "limit": {
+            "signal": "labelL - 10"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "fontSize": {
+            "value": 12
+          },
+          "fill": {
+            "value": "#14262b"
+          },
+          "opacity": {
+            "signal": "(scale('y', datum.y1) - scale('y', datum.y0)) > 10 ? 1 : 0"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "groups"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "scale('x', 2) + nodeW + 6"
+          },
+          "y": {
+            "signal": "scale('y', (datum.y0 + datum.y1) / 2)"
+          },
+          "text": {
+            "signal": "datum.name"
+          },
+          "align": {
+            "value": "left"
+          },
+          "limit": {
+            "signal": "labelR - 10"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "fontSize": {
+            "value": 12
+          },
+          "fill": {
+            "value": "#14262b"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "heads"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "datum.c === 0 ? scale('x', 0) + nodeW : datum.c === 2 ? scale('x', 2) : scale('x', 1) + nodeW / 2"
+          },
+          "y": {
+            "value": -12
+          },
+          "text": {
+            "field": "t"
+          },
+          "align": {
+            "signal": "datum.c === 0 ? 'right' : datum.c === 2 ? 'left' : 'center'"
+          },
+          "fontSize": {
+            "value": 12
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "value": "#566a6e"
+          }
+        }
+      }
+    }
+  ]
+}

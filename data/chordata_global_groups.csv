@@ -1,0 +1,16 @@
+group,status,count
+Mammals,EN,580
+Mammals,CR,242
+Mammals,EX,96
+Birds,EN,389
+Birds,CR,225
+Birds,EX,163
+Reptiles,EN,804
+Reptiles,CR,433
+Reptiles,EX,31
+Amphibians,EN,1300
+Amphibians,CR,824
+Amphibians,EX,37
+Fish,EN,1610
+Fish,CR,907
+Fish,EX,96

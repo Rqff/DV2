@@ -1,0 +1,64 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": { "text": "Heatmap: animal group by threat level", "subtitle": "EN = Endangered, CR = Critically Endangered, EX = Extinct" },
+  "width": "container",
+  "height": 260,
+  "data": { "url": "data/chordata_global_groups.csv" },
+  "encoding": {
+    "x": { "field": "status", "type": "ordinal", "sort": ["EN", "CR", "EX"], "title": null, "axis": { "orient": "top", "labelAngle": 0 } },
+    "y": { "field": "group", "type": "nominal", "sort" : ["Fish", "Amphibians", "Reptiles", "Mammals", "Birds"], "title": null }
+  },
+  "layer": [
+    {
+      "transform": [{"filter": "datum.status == 'EN'"}],
+      "mark": "rect",
+      "encoding": {
+        "color": { "field": "count", "type": "quantitative", "scale": { "scheme": {"name": "oranges", "extent": [0.3,1] }}, "legend": null },
+        "tooltip": [
+          { "field": "group", "type": "nominal", "title": "Group" },
+          { "field": "status", "type": "nominal", "title": "Status" },
+          { "field": "count", "type": "quantitative", "title": "Species" }
+        ]
+      }
+    },
+    {
+      "transform": [{"filter": "datum.status == 'CR'"}],
+      "mark": "rect",
+      "encoding": {
+        "color": { "field": "count", "type": "quantitative", "scale": { "scheme":{"name": "reds", "extent": [0.9,1.2] } }, "legend": null },
+        "tooltip": [
+          { "field": "group", "type": "nominal", "title": "Group" },
+          { "field": "status", "type": "nominal", "title": "Status" },
+          { "field": "count", "type": "quantitative", "title": "Species" }
+        ]
+      }
+    },
+    {
+      "transform": [{"filter": "datum.status == 'EX'"}],
+      "mark": "rect",
+      "encoding": {
+        "color": { "field": "count", "type": "quantitative", "scale": { "scheme": {"name": "blues", "extent": [1.2,1.7] } }, "legend": null },
+        "tooltip": [
+          { "field": "group", "type": "nominal", "title": "Group" },
+          { "field": "status", "type": "nominal", "title": "Status" },
+          { "field": "count", "type": "quantitative", "title": "Species" }
+        ]
+      }
+    },
+    {
+      "mark": "text",
+      "encoding": {
+        "text": { "field": "count", "type": "quantitative" },
+        "color": { 
+          "condition": [
+            { "test": "datum.status == 'EN' && datum.count > 60", "value": "white" },
+            { "test": "datum.status == 'CR' && datum.count > 25", "value": "white" },
+            { "test": "datum.status == 'EX' && datum.count > 5", "value": "white" }
+          ], 
+          "value": "#14262b" 
+        }
+      }
+    }
+  ],
+  "resolve": { "scale": { "color": "independent" } }
+}

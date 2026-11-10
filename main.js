@@ -24,7 +24,23 @@ function showPlaceholder(el, reason) {
     `<small>${reason}</small>`;
 }
 
-// Load one JSON spec and draw it into the element. Never throws, so one broken chart can't stop the others.
+// Draw one chart. If a spec says "width": "container", we measure the chart's box ourselves
+// and use that number, which is more reliable than letting Vega-Lite measure it.
+async function drawChart(el, spec) {
+  const s = JSON.parse(JSON.stringify(spec));   // copy, so the original is kept for redraws
+  if (s.width === "container") {
+    const isVegaLite = (s.$schema || "").includes("vega-lite");
+    // Vega-Lite: make the legend and margins fit inside the measured width.
+    // Full Vega (treemap, Sankey): just use the width, minus its 5px side padding.
+    s.width = Math.max(280, Math.floor(el.clientWidth) - (isVegaLite ? 0 : 10));
+    if (isVegaLite) s.autosize = { type: "fit", contains: "padding" };
+  }
+  el.classList.remove("placeholder");
+  await vegaEmbed(el, s, { actions: false, renderer: "svg", config: BASE_CONFIG });
+  el._drawnWidth = el.clientWidth;
+}
+
+// Load one JSON spec and draw it. Never throws, so one broken chart can't stop the others.
 async function embedChart(el) {
   const url = el.dataset.spec;
   try {
@@ -32,7 +48,8 @@ async function embedChart(el) {
     if (!res.ok) throw new Error(`${url} not found (${res.status})`);
     const spec = await res.json();
     if (spec.todo) throw new Error(spec.todo);
-    await vegaEmbed(el, spec, { actions: false, renderer: "svg", config: BASE_CONFIG });
+    el._spec = spec;
+    await drawChart(el, spec);
   } catch (err) {
     console.warn("Chart failed:", url, err);
     showPlaceholder(el, `Not built yet: ${err.message}`);
@@ -42,4 +59,17 @@ async function embedChart(el) {
 // Find every <div class="chart" data-spec="..."> on the page and draw it.
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".chart[data-spec]").forEach(embedChart);
+});
+
+// Redraw container-width charts when the window is resized.
+let resizeTimer;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    document.querySelectorAll(".chart").forEach(el => {
+      if (el._spec && el._spec.width === "container" && Math.abs(el.clientWidth - el._drawnWidth) > 20) {
+        drawChart(el, el._spec).catch(err => console.warn("Redraw failed:", err));
+      }
+    });
+  }, 250);
 });

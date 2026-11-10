@@ -1,18 +1,118 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": { "text": "Streamgraph: threatened species by risk level", "subtitle": "PLACEHOLDER values. Thicker stream = more species at that risk level" },
+  "title": {
+    "text": "How many species were monitored each year?",
+    "subtitle": [
+      "Each species counted once a year, coloured by its IUCN status.",
+      "A wider stream means more data was collected, not more species at risk."
+    ]
+  },
   "width": "container",
-  "height": 280,
-  "data": { "url": "data/PLACEHOLDER_status_over_time.csv" },
-  "mark": { "type": "area", "interpolate": "monotone" },
-  "encoding": {
-    "x": { "field": "year", "type": "quantitative", "axis": { "format": "d", "title": null } },
-    "y": { "field": "count", "type": "quantitative", "stack": "center", "axis": null },
-    "color": {
-      "field": "status", "type": "nominal", "title": "Risk level",
-      "scale": { "domain": ["VU", "EN", "CR"], "range": ["#f2c744", "#e8833a", "#c8402b"] }
+  "height": 500,
+  "data": {
+    "url": "data/tsx_species_by_year.csv"
+  },
+  "params": [
+    {
+      "name": "measure",
+      "value": "species",
+      "bind": {
+        "input": "select",
+        "options": [
+          "species",
+          "records"
+        ],
+        "labels": [
+          "Species monitored",
+          "Monitoring entries"
+        ],
+        "name": "Count: ",
+        "element": "#stream-toggle"
+      }
+    }
+  ],
+  "transform": [
+    {
+      "calculate": "datum[measure]",
+      "as": "value"
     },
-    "order": { "field": "status", "sort": "descending" },
-    "tooltip": [{ "field": "status", "type": "nominal" }, { "field": "year", "type": "quantitative", "format": "d" }, { "field": "count", "type": "quantitative" }]
+    {
+      "calculate": "indexof(['Critically Endangered','Endangered','Vulnerable','Near Threatened','Least Concern'], datum.status)",
+      "as": "rank"
+    }
+  ],
+  "mark": {
+    "type": "area",
+    "interpolate": "monotone"
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "quantitative",
+      "scale" : { "domain" : [1951,2023]},
+      "axis": {
+        "format": "d",
+        "title": null,
+        "tickMinStep": 8
+      }
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "stack": "center",
+      "axis": null
+    },
+    "color": {
+      "field": "status",
+      "type": "nominal",
+      "title": "IUCN status",
+      "scale": {
+        "domain": [
+          "Least Concern",
+          "Near Threatened",
+          "Vulnerable",
+          "Endangered",
+          "Critically Endangered"
+        ],
+        "range": [
+          "#7fb069",
+          "#c4d06a",
+          "#f2c744",
+          "#e8833a",
+          "#c8402b"
+        ]
+      },
+      "legend": {
+        "labelLimit": 220,
+        "orient": "bottom-left"
+      }
+    },
+    "order": {
+      "field": "rank",
+      "type": "quantitative"
+    },
+    "tooltip": [
+      {
+        "field": "status",
+        "type": "nominal",
+        "title": "IUCN status"
+      },
+      {
+        "field": "year",
+        "type": "quantitative",
+        "title": "Year",
+        "format": "d"
+      },
+      {
+        "field": "species",
+        "type": "quantitative",
+        "title": "Species monitored"
+      },
+      {
+        "field": "records",
+        "type": "quantitative",
+        "title": "Monitoring entries"
+      }
+    ]
   }
 }

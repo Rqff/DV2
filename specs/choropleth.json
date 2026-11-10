@@ -1,34 +1,83 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": { "text": "Choropleth map", "subtitle": "PLACEHOLDER values: swap in real counts of threatened species per country" },
+  "title": {
+    "text": "Where are the most threatened species found?",
+    "subtitle": [
+      "Number of Endangered and Critically Endangered ",
+      "species living in each country.",
+      "Grey = none recorded."
+    ]
+  },
   "width": "container",
-  "height": 380,
-  "projection": { "type": "equalEarth" },
+  "height": 700,
+  "padding" :0,
+  "autosize": {"type": "fit", "contains": "padding"},
+  "projection": { 
+    "type": "equalEarth",
+    "scale": 225,
+    "translate": [450, 300]
+  },
   "data": {
     "url": "https://cdn.jsdelivr.net/npm/vega-datasets@2.11.0/data/world-110m.json",
     "format": { "type": "topojson", "feature": "countries" }
   },
+  "params": [
+    {
+      "name": "normalise",
+      "value": false,
+      "bind": {
+        "input": "checkbox",
+        "name": "Normalise per 10,000 km²",
+        "element": "#map-toggle"
+      }
+    }
+  ],
   "transform": [
     {
       "lookup": "id",
-      "from": { "data": { "url": "data/PLACEHOLDER_countries.csv" }, "key": "id", "fields": ["country", "threatened"] }
+      "from": {
+        "data": { "url": "data/chordata_global_country_totals.csv" },
+        "key": "id",
+        "fields": ["country", "threatened", "CR", "EN", "area"]
+      }
+    },
+    {
+      "calculate": "isValid(datum.area) && datum.area > 0 ? (datum.threatened / datum.area) * 10000 : null",
+      "as": "density"
+    },
+    {
+      "calculate": "normalise === true ? datum.density : datum.threatened",
+      "as": "display_value"
     }
   ],
-  "mark": { "type": "geoshape", "stroke": "white", "strokeWidth": 0.3 },
+  "mark": { "type": "geoshape", "stroke": "white", "strokeWidth": 0.3, "invalid": null},
   "encoding": {
     "color": {
-      "condition": {
-        "test": "isValid(datum.threatened)",
-        "field": "threatened",
-        "type": "quantitative",
-        "scale": { "scheme": "oranges" },
-        "title": "Threatened species"
+      "field": "display_value",
+      "type": "quantitative",
+      "scale": { "type": "pow", "exponent":0.05, "scheme": "oranges", "domainMax": {"expr": "normalise ? 50 : 600"}},
+      "title": ["Species"],
+      "legend": {
+        "orient": "bottom",
+        "offset": -50,
+        "direction": "horizontal",
+        "gradientLength": {"expr": "width"},
+        "gradientThickness": 15,
+        "titleFontSize": 12,
+        "labelFontSize": 12
       },
-      "value": "#e3e9e8"
+      "condition": {
+        "test": "!isValid(datum.threatened) || datum.threatened === 0",
+        "value": "#cccccc"
+      }
     },
     "tooltip": [
       { "field": "country", "type": "nominal", "title": "Country" },
-      { "field": "threatened", "type": "quantitative", "title": "Threatened species" }
+      { "field": "threatened", "type": "quantitative", "title": "Threatened species in total" },
+      { "field": "CR", "type": "quantitative", "title": "Critically endangered" },
+      { "field": "EN", "type": "quantitative", "title": "Endangered" },
+      { "field": "area", "type": "quantitative", "title": "Area (sq km)", "format": "," },
+      { "field": "density", "type": "quantitative", "title": "Species per 10,000 km²", "format": ".2f" }
     ]
   }
 }

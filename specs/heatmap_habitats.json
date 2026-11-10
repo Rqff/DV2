@@ -1,0 +1,235 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Which habitats hold the most threatened species?",
+    "subtitle": [
+      "Species by threat level across major habitat categories.",
+      "A species living in several habitats is counted in each."
+    ]
+  },
+  "width": "container",
+  "height": {
+    "step": 28
+  },
+  "data": {
+    "url": "data/chordata_global_group_habitats.csv"
+  },
+  "transform": [
+    {
+      "calculate": "trim(split(split(datum.sub_habitat, ':')[0], ' - ')[0])",
+      "as": "major_habitat"
+    },
+    {
+      "calculate": "isNaN(toNumber(datum.count)) ? 0 : toNumber(datum.count)",
+      "as": "clean_count"
+    },
+    {
+      "aggregate": [
+        {
+          "op": "sum",
+          "field": "clean_count",
+          "as": "count"
+        }
+      ],
+      "groupby": [
+        "status",
+        "major_habitat"
+      ]
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "max",
+          "field": "count",
+          "as": "max_in_status"
+        }
+      ],
+      "groupby": [
+        "status"
+      ]
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "count",
+          "as": "habitat_total"
+        }
+      ],
+      "groupby": [
+        "major_habitat"
+      ]
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "status",
+      "type": "ordinal",
+      "sort": [
+        "EN",
+        "CR",
+        "EX"
+      ],
+      "title": null,
+      "axis": {
+        "orient": "top",
+        "labelAngle": 0
+      }
+    },
+    "y": {
+      "field": "major_habitat",
+      "type": "nominal",
+      "title": null,
+      "sort": {
+        "field": "habitat_total",
+        "op": "max",
+        "order": "descending"
+      },
+      "axis": {
+        "labelLimit": 320
+      }
+    }
+  },
+  "layer": [
+    {
+      "transform": [
+        {
+          "filter": "datum.status == 'EN'"
+        }
+      ],
+      "mark": "rect",
+      "encoding": {
+        "color": {
+          "field": "count",
+          "type": "quantitative",
+          "scale": {
+            "scheme": {
+              "name": "oranges",
+              "extent": [
+                0.3,
+                1.0
+              ]
+            }
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "major_habitat",
+            "type": "nominal",
+            "title": "Habitat"
+          },
+          {
+            "field": "status",
+            "type": "nominal",
+            "title": "Status"
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Species"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.status == 'CR'"
+        }
+      ],
+      "mark": "rect",
+      "encoding": {
+        "color": {
+          "field": "count",
+          "type": "quantitative",
+          "scale": {
+            "scheme": {
+              "name": "reds",
+              "extent": [
+                0.9,
+                1.2
+              ]
+            }
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "major_habitat",
+            "type": "nominal",
+            "title": "Habitat"
+          },
+          {
+            "field": "status",
+            "type": "nominal",
+            "title": "Status"
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Species"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.status == 'EX'"
+        }
+      ],
+      "mark": "rect",
+      "encoding": {
+        "color": {
+          "field": "count",
+          "type": "quantitative",
+          "scale": {
+            "scheme": {
+              "name": "blues",
+              "extent": [
+                1.2,
+                1.7
+              ]
+            }
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "major_habitat",
+            "type": "nominal",
+            "title": "Habitat"
+          },
+          {
+            "field": "status",
+            "type": "nominal",
+            "title": "Status"
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Species"
+          }
+        ]
+      }
+    },
+    {
+      "mark": "text",
+      "encoding": {
+        "text": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "color": {
+          "value": "white"
+        }
+      }
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "color": "independent"
+    }
+  }
+}

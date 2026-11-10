@@ -1,0 +1,139 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Hexbin map of threatened species in Victoria. The state's shape is made of the hexagons themselves.",
+  "width": "container",
+  "height": 500,
+  "padding": 5,
+  "autosize": { "type": "fit", "contains": "padding" },
+  "title": {
+    "text": "Threatened species hotspots across Victoria",
+    "subtitle": [
+      "Vulnerable, endangered and critically endangered species,",
+      "grouped into hexagons. Hover over a hexagon for details."
+    ],
+    "anchor": "start",
+    "font": "Fraunces, Georgia, serif",
+    "fontSize": 17,
+    "subtitleColor": "#566a6e"
+  },
+  "signals": [
+    {
+      "name": "status_filter",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": ["All", "VU", "EN", "CR"],
+        "labels": [
+          "All threatened (VU + EN + CR)",
+          "Vulnerable (VU) only",
+          "Endangered (EN) only",
+          "Critically endangered (CR) only"
+        ],
+        "name": "Threat level: ",
+        "element": "#hexbin-toggle"
+      }
+    }
+  ],
+  "projections": [
+    {
+      "name": "projection",
+      "type": "mercator",
+      "fit": { "signal": "data('hexes')" },
+      "size": { "signal": "[width, height]" }
+    }
+  ],
+  "data": [
+    {
+      "name": "hexes",
+      "url": "data/victoria_hexes.geojson",
+      "format": { "type": "json", "property": "features" },
+      "transform": [
+        {
+          "type": "formula",
+          "expr": "status_filter == 'VU' ? datum.properties.VU : status_filter == 'EN' ? datum.properties.EN : status_filter == 'CR' ? datum.properties.CR : datum.properties.total",
+          "as": "display_count"
+        }
+      ]
+    },
+    { "name": "counted", "source": "hexes", "transform": [{ "type": "filter", "expr": "datum.display_count > 0" }] },
+    { "name": "empty", "source": "hexes", "transform": [{ "type": "filter", "expr": "datum.display_count == 0" }] },
+    {
+      "name": "outline",
+      "url": "data/victoria_hex_outline.geojson",
+      "format": { "type": "json", "property": "features" }
+    }
+  ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "sqrt",
+      "domain": { "data": "counted", "field": "display_count" },
+      "domainMin": 1,
+      "range": { "scheme": "oranges", "extent": [0.25, 1.0] }
+    }
+  ],
+  "legends": [
+    {
+      "fill": "color",
+      "orient": "bottom",
+      "direction": "horizontal",
+      "title": "Species in hexagon",
+      "gradientLength": {"signal": "width"},
+      "gradientThickness": 15,
+      "titleFontSize": 12,
+      "labelFontSize": 12,
+      "offset": 0
+    }
+  ],
+  "marks": [
+    {
+      "type": "shape",
+      "from": { "data": "empty" },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "fill": { "value": "#e4ecea" },
+          "stroke": { "value": "white" },
+          "strokeWidth": { "value": 1 }
+        }
+      },
+      "transform": [{ "type": "geoshape", "projection": "projection" }]
+    },
+    {
+      "type": "shape",
+      "from": { "data": "counted" },
+      "encode": {
+        "update": {
+          "fill": { "scale": "color", "field": "display_count" },
+          "stroke": { "value": "white" },
+          "strokeWidth": { "value": 1 },
+          "fillOpacity": { "value": 0.95 },
+          "tooltip": {
+            "signal": "{'Example region': datum.properties.example_region, 'Total threatened species': datum.properties.total, 'Critically endangered': datum.properties.CR, 'Endangered': datum.properties.EN, 'Vulnerable': datum.properties.VU}"
+          }
+        },
+        "hover": {
+          "fillOpacity": { "value": 1 },
+          "stroke": { "value": "#14262b" },
+          "strokeWidth": { "value": 1.5 }
+        }
+      },
+      "transform": [{ "type": "geoshape", "projection": "projection" }]
+    },
+    {
+      "type": "shape",
+      "from": { "data": "outline" },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "fill": { "value": "transparent" },
+          "stroke": { "value": "#7c9692" },
+          "strokeWidth": { "value": 2 },
+          "strokeCap": { "value": "round" },
+          "strokeJoin": { "value": "round" }
+        }
+      },
+      "transform": [{ "type": "geoshape", "projection": "projection" }]
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+year,status,species,records
+1952,Least Concern,1,2
+1952,Near Threatened,0,0
+1952,Vulnerable,0,0
+1952,Endangered,0,0
+1952,Critically Endangered,0,0
+1953,Least Concern,1,1
+1953,Near Threatened,0,0
+1953,Vulnerable,0,0
+1953,Endangered,0,0
+1953,Critically Endangered,0,0
+1954,Least Concern,1,1
+1954,Near Threatened,0,0
+1954,Vulnerable,0,0
+1954,Endangered,0,0
+1954,Critically Endangered,0,0
+1955,Least Concern,0,0
+1955,Near Threatened,0,0
+1955,Vulnerable,0,0
+1955,Endangered,0,0
+1955,Critically Endangered,0,0
+1956,Least Concern,1,2
+1956,Near Threatened,0,0
+1956,Vulnerable,0,0
+1956,Endangered,0,0
+1956,Critically Endangered,0,0
+1957,Least Concern,0,0
+1957,Near Threatened,0,0
+1957,Vulnerable,0,0
+1957,Endangered,0,0
+1957,Critically Endangered,0,0
+1958,Least Concern,1,1
+1958,Near Threatened,0,0
+1958,Vulnerable,0,0
+1958,Endangered,0,0
+1958,Critically Endangered,1,1
+1959,Least Concern,1,2
+1959,Near Threatened,0,0
+1959,Vulnerable,0,0
+1959,Endangered,0,0
+1959,Critically Endangered,1,1
+1960,Least Concern,1,1
+1960,Near Threatened,0,0
+1960,Vulnerable,0,0
+1960,Endangered,0,0
+1960,Critically Endangered,0,0
+1961,Least Concern,1,2
+1961,Near Threatened,0,0
+1961,Vulnerable,0,0
+1961,Endangered,0,0
+1961,Critically Endangered,1,1
+1962,Least Concern,0,0
+1962,Near Threatened,0,0
+1962,Vulnerable,0,0
+1962,Endangered,0,0
+1962,Critically Endangered,1,1
+1963,Least Concern,1,1
+1963,Near Threatened,0,0
+1963,Vulnerable,1,1
+1963,Endangered,0,0
+1963,Critically Endangered,2,3
+1964,Least Concern,1,2
+1964,Near Threatened,0,0
+1964,Vulnerable,1,1
+1964,Endangered,0,0
+1964,Critically Endangered,1,2
+1965,Least Concern,0,0
+1965,Near Threatened,0,0
+1965,Vulnerable,1,1
+1965,Endangered,0,0
+1965,Critically Endangered,2,3
+1966,Least Concern,0,0
+1966,Near Threatened,1,1
+1966,Vulnerable,2,2
+1966,Endangered,0,0
+1966,Critically Endangered,2,3
+1967,Least Concern,1,1
+1967,Near Threatened,0,0
+1967,Vulnerable,3,5
+1967,Endangered,0,0
+1967,Critically Endangered,2,3
+1968,Least Concern,1,1
+1968,Near Threatened,1,1
+1968,Vulnerable,3,4
+1968,Endangered,0,0
+1968,Critically Endangered,1,2
+1969,Least Concern,0,0
+1969,Near Threatened,2,3
+1969,Vulnerable,3,3
+1969,Endangered,0,0
+1969,Critically Endangered,2,3
+1970,Least Concern,1,1
+1970,Near Threatened,3,3
+1970,Vulnerable,4,5
+1970,Endangered,0,0
+1970,Critically Endangered,2,3
+1971,Least Concern,0,0
+1971,Near Threatened,0,0
+1971,Vulnerable,3,4
+1971,Endangered,0,0
+1971,Critically Endangered,2,3
+1972,Least Concern,1,4
+1972,Near Threatened,1,1
+1972,Vulnerable,5,9
+1972,Endangered,0,0
+1972,Critically Endangered,1,2
+1973,Least Concern,1,1
+1973,Near Threatened,1,1
+1973,Vulnerable,5,5
+1973,Endangered,0,0
+1973,Critically Endangered,2,3
+1974,Least Concern,1,3
+1974,Near Threatened,2,3
+1974,Vulnerable,5,7
+1974,Endangered,1,1
+1974,Critically Endangered,2,3
+1975,Least Concern,1,1
+1975,Near Threatened,3,3
+1975,Vulnerable,6,7
+1975,Endangered,1,1
+1975,Critically Endangered,2,3
+1976,Least Concern,1,2
+1976,Near Threatened,1,2
+1976,Vulnerable,6,7
+1976,Endangered,1,2
+1976,Critically Endangered,1,2
+1977,Least Concern,1,4
+1977,Near Threatened,1,3
+1977,Vulnerable,5,13
+1977,Endangered,1,2
+1977,Critically Endangered,2,3
+1978,Least Concern,1,5
+1978,Near Threatened,3,8
+1978,Vulnerable,4,8
+1978,Endangered,1,2
+1978,Critically Endangered,2,3
+1979,Least Concern,1,4
+1979,Near Threatened,2,3
+1979,Vulnerable,4,8
+1979,Endangered,1,2
+1979,Critically Endangered,2,3
+1980,Least Concern,1,4
+1980,Near Threatened,3,5
+1980,Vulnerable,5,9
+1980,Endangered,1,2
+1980,Critically Endangered,1,2
+1981,Least Concern,2,123
+1981,Near Threatened,3,184
+1981,Vulnerable,6,141
+1981,Endangered,2,57
+1981,Critically Endangered,2,3
+1982,Least Concern,2,146
+1982,Near Threatened,6,223
+1982,Vulnerable,7,151
+1982,Endangered,2,61
+1982,Critically Endangered,3,5
+1983,Least Concern,2,146
+1983,Near Threatened,3,219
+1983,Vulnerable,6,154
+1983,Endangered,2,63
+1983,Critically Endangered,3,28
+1984,Least Concern,2,158
+1984,Near Threatened,6,252
+1984,Vulnerable,6,177
+1984,Endangered,2,71
+1984,Critically Endangered,4,19
+1985,Least Concern,5,147
+1985,Near Threatened,7,320
+1985,Vulnerable,8,164
+1985,Endangered,3,192
+1985,Critically Endangered,4,6
+1986,Least Concern,6,84
+1986,Near Threatened,7,187
+1986,Vulnerable,7,99
+1986,Endangered,3,178
+1986,Critically Endangered,5,28
+1987,Least Concern,5,91
+1987,Near Threatened,6,223
+1987,Vulnerable,7,115
+1987,Endangered,3,195
+1987,Critically Endangered,5,32
+1988,Least Concern,4,97
+1988,Near Threatened,7,236
+1988,Vulnerable,7,125
+1988,Endangered,3,175
+1988,Critically Endangered,6,31
+1989,Least Concern,6,91
+1989,Near Threatened,7,234
+1989,Vulnerable,8,127
+1989,Endangered,4,192
+1989,Critically Endangered,6,30
+1990,Least Concern,5,81
+1990,Near Threatened,8,215
+1990,Vulnerable,7,125
+1990,Endangered,4,197
+1990,Critically Endangered,7,33
+1991,Least Concern,6,100
+1991,Near Threatened,7,248
+1991,Vulnerable,9,139
+1991,Endangered,4,211
+1991,Critically Endangered,6,32
+1992,Least Concern,7,136
+1992,Near Threatened,9,282
+1992,Vulnerable,10,244
+1992,Endangered,4,225
+1992,Critically Endangered,9,42
+1993,Least Concern,7,166
+1993,Near Threatened,7,325
+1993,Vulnerable,11,289
+1993,Endangered,7,354
+1993,Critically Endangered,10,90
+1994,Least Concern,7,219
+1994,Near Threatened,9,401
+1994,Vulnerable,13,343
+1994,Endangered,7,416
+1994,Critically Endangered,9,91
+1995,Least Concern,10,310
+1995,Near Threatened,10,468
+1995,Vulnerable,15,424
+1995,Endangered,9,450
+1995,Critically Endangered,12,102
+1996,Least Concern,14,371
+1996,Near Threatened,11,500
+1996,Vulnerable,22,559
+1996,Endangered,12,486
+1996,Critically Endangered,11,106
+1997,Least Concern,13,339
+1997,Near Threatened,11,619
+1997,Vulnerable,15,451
+1997,Endangered,12,593
+1997,Critically Endangered,13,142
+1998,Least Concern,14,484
+1998,Near Threatened,13,704
+1998,Vulnerable,15,471
+1998,Endangered,13,637
+1998,Critically Endangered,13,96
+1999,Least Concern,21,2525
+1999,Near Threatened,13,808
+1999,Vulnerable,23,1582
+1999,Endangered,14,756
+1999,Critically Endangered,12,97
+2000,Least Concern,22,2790
+2000,Near Threatened,14,774
+2000,Vulnerable,21,1846
+2000,Endangered,14,696
+2000,Critically Endangered,14,104
+2001,Least Concern,21,2810
+2001,Near Threatened,14,722
+2001,Vulnerable,26,1867
+2001,Endangered,18,668
+2001,Critically Endangered,19,124
+2002,Least Concern,21,2157
+2002,Near Threatened,16,913
+2002,Vulnerable,27,1606
+2002,Endangered,20,797
+2002,Critically Endangered,20,143
+2003,Least Concern,21,2033
+2003,Near Threatened,15,795
+2003,Vulnerable,24,1412
+2003,Endangered,19,728
+2003,Critically Endangered,17,116
+2004,Least Concern,21,1957
+2004,Near Threatened,14,730
+2004,Vulnerable,24,1398
+2004,Endangered,19,696
+2004,Critically Endangered,18,109
+2005,Least Concern,25,2297
+2005,Near Threatened,14,746
+2005,Vulnerable,23,1532
+2005,Endangered,22,735
+2005,Critically Endangered,21,118
+2006,Least Concern,29,2327
+2006,Near Threatened,14,818
+2006,Vulnerable,26,1683
+2006,Endangered,21,850
+2006,Critically Endangered,18,110
+2007,Least Concern,27,2244
+2007,Near Threatened,14,876
+2007,Vulnerable,27,1660
+2007,Endangered,21,932
+2007,Critically Endangered,18,113
+2008,Least Concern,27,2447
+2008,Near Threatened,13,983
+2008,Vulnerable,33,1897
+2008,Endangered,24,1069
+2008,Critically Endangered,19,128
+2009,Least Concern,28,2736
+2009,Near Threatened,14,1272
+2009,Vulnerable,29,1857
+2009,Endangered,24,1111
+2009,Critically Endangered,16,111
+2010,Least Concern,26,2513
+2010,Near Threatened,16,1277
+2010,Vulnerable,28,1997
+2010,Endangered,25,1233
+2010,Critically Endangered,18,136
+2011,Least Concern,28,4187
+2011,Near Threatened,17,1403
+2011,Vulnerable,37,2321
+2011,Endangered,30,1844
+2011,Critically Endangered,19,174
+2012,Least Concern,25,2739
+2012,Near Threatened,19,1375
+2012,Vulnerable,36,2455
+2012,Endangered,29,1379
+2012,Critically Endangered,17,190
+2013,Least Concern,29,4339
+2013,Near Threatened,20,1503
+2013,Vulnerable,41,2456
+2013,Endangered,28,1843
+2013,Critically Endangered,19,169
+2014,Least Concern,30,2546
+2014,Near Threatened,18,1431
+2014,Vulnerable,38,2348
+2014,Endangered,28,1305
+2014,Critically Endangered,18,189
+2015,Least Concern,31,3918
+2015,Near Threatened,19,1524
+2015,Vulnerable,36,2320
+2015,Endangered,31,1786
+2015,Critically Endangered,19,184
+2016,Least Concern,28,2593
+2016,Near Threatened,21,1595
+2016,Vulnerable,38,2435
+2016,Endangered,28,1394
+2016,Critically Endangered,19,219
+2017,Least Concern,29,2679
+2017,Near Threatened,23,1436
+2017,Vulnerable,35,2512
+2017,Endangered,33,1310
+2017,Critically Endangered,19,234
+2018,Least Concern,27,3036
+2018,Near Threatened,18,1528
+2018,Vulnerable,33,2570
+2018,Endangered,35,1449
+2018,Critically Endangered,20,165
+2019,Least Concern,26,2887
+2019,Near Threatened,14,1257
+2019,Vulnerable,32,2673
+2019,Endangered,33,1188
+2019,Critically Endangered,21,212
+2020,Least Concern,23,2739
+2020,Near Threatened,16,1349
+2020,Vulnerable,33,2684
+2020,Endangered,33,964
+2020,Critically Endangered,17,147
+2021,Least Concern,23,2934
+2021,Near Threatened,15,1246
+2021,Vulnerable,33,2634
+2021,Endangered,28,1083
+2021,Critically Endangered,14,192
+2022,Least Concern,10,516
+2022,Near Threatened,13,1063
+2022,Vulnerable,23,1126
+2022,Endangered,18,737
+2022,Critically Endangered,15,137

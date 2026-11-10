@@ -1,0 +1,451 @@
+group,status,main_habitat,sub_habitat,count
+Mammals,EN,Artificial - land,Artificial - land,118
+Mammals,EN,Artificial - water and marine,Artificial - water and marine,6
+Mammals,EN,Caves and underground,Caves and underground,49
+Mammals,EN,Desert,Desert,28
+Mammals,EN,Forest,Forest: Other,7
+Mammals,EN,Forest,Forest: Subtropical/Tropical Dry,110
+Mammals,EN,Forest,Forest: Subtropical/Tropical Mangrove Vegetation Above High Tide Level,46
+Mammals,EN,Forest,Forest: Subtropical/Tropical Moist Lowland,258
+Mammals,EN,Forest,Forest: Subtropical/Tropical Moist Montane,219
+Mammals,EN,Forest,Forest: Subtropical/Tropical Swamp,52
+Mammals,EN,Forest,Forest: Temperate,52
+Mammals,EN,Grassland,Grassland,106
+Mammals,EN,Marine - coastal,Marine - coastal,22
+Mammals,EN,Marine - deep sea floor,Marine - deep sea floor,0
+Mammals,EN,Marine - intertidal,Marine - intertidal,15
+Mammals,EN,Marine - open ocean,Marine - open ocean,15
+Mammals,EN,Marine - shallow sea,Marine - shallow sea,21
+Mammals,EN,Other / unknown,Other / unknown,15
+Mammals,EN,Rocky areas,Rocky areas,40
+Mammals,EN,Savanna,Savanna,44
+Mammals,EN,Shrubland,Shrubland,106
+Mammals,EN,Wetlands (inland),"Wetlands (inland): Bogs, Marshes, Swamps, Fens, Peatlands",32
+Mammals,EN,Wetlands (inland),Wetlands (inland): Freshwater Springs and Oases,3
+Mammals,EN,Wetlands (inland),Wetlands (inland): Karst and Other Subterranean Hydrological Systems (inland),4
+Mammals,EN,Wetlands (inland),Wetlands (inland): Other,26
+Mammals,EN,Wetlands (inland),Wetlands (inland): Permanent Freshwater Lakes (over 8ha),10
+Mammals,EN,Wetlands (inland),Wetlands (inland): Permanent Freshwater Marshes/Pools (under 8ha),8
+Mammals,EN,Wetlands (inland),Wetlands (inland): Permanent Rivers/Streams/Creeks (includes waterfalls),28
+Mammals,EN,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),5
+Mammals,EN,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,14
+Mammals,CR,Artificial - land,Artificial - land,36
+Mammals,CR,Artificial - water and marine,Artificial - water and marine,2
+Mammals,CR,Caves and underground,Caves and underground,15
+Mammals,CR,Desert,Desert,12
+Mammals,CR,Forest,Forest: Other,3
+Mammals,CR,Forest,Forest: Subtropical/Tropical Dry,46
+Mammals,CR,Forest,Forest: Subtropical/Tropical Mangrove Vegetation Above High Tide Level,17
+Mammals,CR,Forest,Forest: Subtropical/Tropical Moist Lowland,115
+Mammals,CR,Forest,Forest: Subtropical/Tropical Moist Montane,87
+Mammals,CR,Forest,Forest: Subtropical/Tropical Swamp,25
+Mammals,CR,Forest,Forest: Temperate,12
+Mammals,CR,Grassland,Grassland,34
+Mammals,CR,Marine - coastal,Marine - coastal,2
+Mammals,CR,Marine - deep sea floor,Marine - deep sea floor,0
+Mammals,CR,Marine - intertidal,Marine - intertidal,2
+Mammals,CR,Marine - open ocean,Marine - open ocean,4
+Mammals,CR,Marine - shallow sea,Marine - shallow sea,4
+Mammals,CR,Other / unknown,Other / unknown,6
+Mammals,CR,Rocky areas,Rocky areas,12
+Mammals,CR,Savanna,Savanna,19
+Mammals,CR,Shrubland,Shrubland,42
+Mammals,CR,Wetlands (inland),"Wetlands (inland): Bogs, Marshes, Swamps, Fens, Peatlands",11
+Mammals,CR,Wetlands (inland),Wetlands (inland): Freshwater Springs and Oases,1
+Mammals,CR,Wetlands (inland),Wetlands (inland): Karst and Other Subterranean Hydrological Systems (inland),0
+Mammals,CR,Wetlands (inland),Wetlands (inland): Other,8
+Mammals,CR,Wetlands (inland),Wetlands (inland): Permanent Freshwater Lakes (over 8ha),3
+Mammals,CR,Wetlands (inland),Wetlands (inland): Permanent Freshwater Marshes/Pools (under 8ha),4
+Mammals,CR,Wetlands (inland),Wetlands (inland): Permanent Rivers/Streams/Creeks (includes waterfalls),11
+Mammals,CR,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),3
+Mammals,CR,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,3
+Mammals,EX,Artificial - land,Artificial - land,0
+Mammals,EX,Artificial - water and marine,Artificial - water and marine,0
+Mammals,EX,Caves and underground,Caves and underground,1
+Mammals,EX,Desert,Desert,12
+Mammals,EX,Forest,Forest: Other,1
+Mammals,EX,Forest,Forest: Subtropical/Tropical Dry,3
+Mammals,EX,Forest,Forest: Subtropical/Tropical Mangrove Vegetation Above High Tide Level,0
+Mammals,EX,Forest,Forest: Subtropical/Tropical Moist Lowland,10
+Mammals,EX,Forest,Forest: Subtropical/Tropical Moist Montane,3
+Mammals,EX,Forest,Forest: Subtropical/Tropical Swamp,0
+Mammals,EX,Forest,Forest: Temperate,6
+Mammals,EX,Grassland,Grassland,20
+Mammals,EX,Marine - coastal,Marine - coastal,3
+Mammals,EX,Marine - deep sea floor,Marine - deep sea floor,0
+Mammals,EX,Marine - intertidal,Marine - intertidal,3
+Mammals,EX,Marine - open ocean,Marine - open ocean,2
+Mammals,EX,Marine - shallow sea,Marine - shallow sea,4
+Mammals,EX,Other / unknown,Other / unknown,42
+Mammals,EX,Rocky areas,Rocky areas,2
+Mammals,EX,Savanna,Savanna,11
+Mammals,EX,Shrubland,Shrubland,22
+Mammals,EX,Wetlands (inland),"Wetlands (inland): Bogs, Marshes, Swamps, Fens, Peatlands",2
+Mammals,EX,Wetlands (inland),Wetlands (inland): Freshwater Springs and Oases,0
+Mammals,EX,Wetlands (inland),Wetlands (inland): Karst and Other Subterranean Hydrological Systems (inland),0
+Mammals,EX,Wetlands (inland),Wetlands (inland): Other,1
+Mammals,EX,Wetlands (inland),Wetlands (inland): Permanent Freshwater Lakes (over 8ha),0
+Mammals,EX,Wetlands (inland),Wetlands (inland): Permanent Freshwater Marshes/Pools (under 8ha),0
+Mammals,EX,Wetlands (inland),Wetlands (inland): Permanent Rivers/Streams/Creeks (includes waterfalls),0
+Mammals,EX,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),0
+Mammals,EX,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,0
+Birds,EN,Artificial - land,Artificial - land,144
+Birds,EN,Artificial - water and marine,Artificial - water and marine,14
+Birds,EN,Caves and underground,Caves and underground,1
+Birds,EN,Desert,Desert,4
+Birds,EN,Forest,Forest: Other,3
+Birds,EN,Forest,Forest: Subtropical/Tropical Dry,47
+Birds,EN,Forest,Forest: Subtropical/Tropical Mangrove Vegetation Above High Tide Level,27
+Birds,EN,Forest,Forest: Subtropical/Tropical Moist Lowland,163
+Birds,EN,Forest,Forest: Subtropical/Tropical Moist Montane,143
+Birds,EN,Forest,Forest: Subtropical/Tropical Swamp,19
+Birds,EN,Forest,Forest: Temperate,28
+Birds,EN,Grassland,Grassland,69
+Birds,EN,Marine - coastal,Marine - coastal,39
+Birds,EN,Marine - deep sea floor,Marine - deep sea floor,0
+Birds,EN,Marine - intertidal,Marine - intertidal,32
+Birds,EN,Marine - open ocean,Marine - open ocean,30
+Birds,EN,Marine - shallow sea,Marine - shallow sea,48
+Birds,EN,Other / unknown,Other / unknown,2
+Birds,EN,Rocky areas,Rocky areas,20
+Birds,EN,Savanna,Savanna,35
+Birds,EN,Shrubland,Shrubland,105
+Birds,EN,Wetlands (inland),"Wetlands (inland): Bogs, Marshes, Swamps, Fens, Peatlands",29
+Birds,EN,Wetlands (inland),Wetlands (inland): Freshwater Springs and Oases,1
+Birds,EN,Wetlands (inland),Wetlands (inland): Karst and Other Subterranean Hydrological Systems (inland),0
+Birds,EN,Wetlands (inland),Wetlands (inland): Other,12
+Birds,EN,Wetlands (inland),Wetlands (inland): Permanent Freshwater Lakes (over 8ha),42
+Birds,EN,Wetlands (inland),Wetlands (inland): Permanent Freshwater Marshes/Pools (under 8ha),32
+Birds,EN,Wetlands (inland),Wetlands (inland): Permanent Rivers/Streams/Creeks (includes waterfalls),35
+Birds,EN,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),4
+Birds,EN,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,2
+Birds,CR,Artificial - land,Artificial - land,66
+Birds,CR,Artificial - water and marine,Artificial - water and marine,5
+Birds,CR,Caves and underground,Caves and underground,1
+Birds,CR,Desert,Desert,7
+Birds,CR,Forest,Forest: Other,1
+Birds,CR,Forest,Forest: Subtropical/Tropical Dry,38
+Birds,CR,Forest,Forest: Subtropical/Tropical Mangrove Vegetation Above High Tide Level,13
+Birds,CR,Forest,Forest: Subtropical/Tropical Moist Lowland,99
+Birds,CR,Forest,Forest: Subtropical/Tropical Moist Montane,73
+Birds,CR,Forest,Forest: Subtropical/Tropical Swamp,5
+Birds,CR,Forest,Forest: Temperate,14
+Birds,CR,Grassland,Grassland,47
+Birds,CR,Marine - coastal,Marine - coastal,13
+Birds,CR,Marine - deep sea floor,Marine - deep sea floor,0
+Birds,CR,Marine - intertidal,Marine - intertidal,15
+Birds,CR,Marine - open ocean,Marine - open ocean,16
+Birds,CR,Marine - shallow sea,Marine - shallow sea,22
+Birds,CR,Other / unknown,Other / unknown,0
+Birds,CR,Rocky areas,Rocky areas,8
+Birds,CR,Savanna,Savanna,19
+Birds,CR,Shrubland,Shrubland,62
+Birds,CR,Wetlands (inland),"Wetlands (inland): Bogs, Marshes, Swamps, Fens, Peatlands",16
+Birds,CR,Wetlands (inland),Wetlands (inland): Freshwater Springs and Oases,0
+Birds,CR,Wetlands (inland),Wetlands (inland): Karst and Other Subterranean Hydrological Systems (inland),0
+Birds,CR,Wetlands (inland),Wetlands (inland): Other,3
+Birds,CR,Wetlands (inland),Wetlands (inland): Permanent Freshwater Lakes (over 8ha),15
+Birds,CR,Wetlands (inland),Wetlands (inland): Permanent Freshwater Marshes/Pools (under 8ha),14
+Birds,CR,Wetlands (inland),Wetlands (inland): Permanent Rivers/Streams/Creeks (includes waterfalls),18
+Birds,CR,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),1
+Birds,CR,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,1
+Birds,EX,Artificial - land,Artificial - land,7
+Birds,EX,Artificial - water and marine,Artificial - water and marine,0
+Birds,EX,Caves and underground,Caves and underground,0
+Birds,EX,Desert,Desert,0
+Birds,EX,Forest,Forest: Other,3
+Birds,EX,Forest,Forest: Subtropical/Tropical Dry,12
+Birds,EX,Forest,Forest: Subtropical/Tropical Mangrove Vegetation Above High Tide Level,1
+Birds,EX,Forest,Forest: Subtropical/Tropical Moist Lowland,60
+Birds,EX,Forest,Forest: Subtropical/Tropical Moist Montane,37
+Birds,EX,Forest,Forest: Subtropical/Tropical Swamp,2
+Birds,EX,Forest,Forest: Temperate,18
+Birds,EX,Grassland,Grassland,11
+Birds,EX,Marine - coastal,Marine - coastal,3
+Birds,EX,Marine - deep sea floor,Marine - deep sea floor,0
+Birds,EX,Marine - intertidal,Marine - intertidal,6
+Birds,EX,Marine - open ocean,Marine - open ocean,3
+Birds,EX,Marine - shallow sea,Marine - shallow sea,5
+Birds,EX,Other / unknown,Other / unknown,19
+Birds,EX,Rocky areas,Rocky areas,2
+Birds,EX,Savanna,Savanna,2
+Birds,EX,Shrubland,Shrubland,27
+Birds,EX,Wetlands (inland),"Wetlands (inland): Bogs, Marshes, Swamps, Fens, Peatlands",7
+Birds,EX,Wetlands (inland),Wetlands (inland): Freshwater Springs and Oases,0
+Birds,EX,Wetlands (inland),Wetlands (inland): Karst and Other Subterranean Hydrological Systems (inland),0
+Birds,EX,Wetlands (inland),Wetlands (inland): Other,2
+Birds,EX,Wetlands (inland),Wetlands (inland): Permanent Freshwater Lakes (over 8ha),12
+Birds,EX,Wetlands (inland),Wetlands (inland): Permanent Freshwater Marshes/Pools (under 8ha),16
+Birds,EX,Wetlands (inland),Wetlands (inland): Permanent Rivers/Streams/Creeks (includes waterfalls),5
+Birds,EX,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),1
+Birds,EX,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,0
+Reptiles,EN,Artificial - land,Artificial - land,141
+Reptiles,EN,Artificial - water and marine,Artificial - water and marine,13
+Reptiles,EN,Caves and underground,Caves and underground,13
+Reptiles,EN,Desert,Desert,21
+Reptiles,EN,Forest,Forest: Other,0
+Reptiles,EN,Forest,Forest: Subtropical/Tropical Dry,181
+Reptiles,EN,Forest,Forest: Subtropical/Tropical Mangrove Vegetation Above High Tide Level,13
+Reptiles,EN,Forest,Forest: Subtropical/Tropical Moist Lowland,286
+Reptiles,EN,Forest,Forest: Subtropical/Tropical Moist Montane,204
+Reptiles,EN,Forest,Forest: Subtropical/Tropical Swamp,12
+Reptiles,EN,Forest,Forest: Temperate,27
+Reptiles,EN,Grassland,Grassland,87
+Reptiles,EN,Marine - coastal,Marine - coastal,27
+Reptiles,EN,Marine - deep sea floor,Marine - deep sea floor,0
+Reptiles,EN,Marine - intertidal,Marine - intertidal,16
+Reptiles,EN,Marine - open ocean,Marine - open ocean,0
+Reptiles,EN,Marine - shallow sea,Marine - shallow sea,3
+Reptiles,EN,Other / unknown,Other / unknown,15
+Reptiles,EN,Rocky areas,Rocky areas,76
+Reptiles,EN,Savanna,Savanna,32
+Reptiles,EN,Shrubland,Shrubland,151
+Reptiles,EN,Wetlands (inland),"Wetlands (inland): Bogs, Marshes, Swamps, Fens, Peatlands",23
+Reptiles,EN,Wetlands (inland),Wetlands (inland): Freshwater Springs and Oases,5
+Reptiles,EN,Wetlands (inland),Wetlands (inland): Karst and Other Subterranean Hydrological Systems (inland),0
+Reptiles,EN,Wetlands (inland),Wetlands (inland): Other,19
+Reptiles,EN,Wetlands (inland),Wetlands (inland): Permanent Freshwater Lakes (over 8ha),12
+Reptiles,EN,Wetlands (inland),Wetlands (inland): Permanent Freshwater Marshes/Pools (under 8ha),21
+Reptiles,EN,Wetlands (inland),Wetlands (inland): Permanent Rivers/Streams/Creeks (includes waterfalls),50
+Reptiles,EN,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),10
+Reptiles,EN,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,14
+Reptiles,CR,Artificial - land,Artificial - land,52
+Reptiles,CR,Artificial - water and marine,Artificial - water and marine,11
+Reptiles,CR,Caves and underground,Caves and underground,15
+Reptiles,CR,Desert,Desert,11
+Reptiles,CR,Forest,Forest: Other,0
+Reptiles,CR,Forest,Forest: Subtropical/Tropical Dry,98
+Reptiles,CR,Forest,Forest: Subtropical/Tropical Mangrove Vegetation Above High Tide Level,13
+Reptiles,CR,Forest,Forest: Subtropical/Tropical Moist Lowland,140
+Reptiles,CR,Forest,Forest: Subtropical/Tropical Moist Montane,64
+Reptiles,CR,Forest,Forest: Subtropical/Tropical Swamp,10
+Reptiles,CR,Forest,Forest: Temperate,5
+Reptiles,CR,Grassland,Grassland,29
+Reptiles,CR,Marine - coastal,Marine - coastal,21
+Reptiles,CR,Marine - deep sea floor,Marine - deep sea floor,0
+Reptiles,CR,Marine - intertidal,Marine - intertidal,15
+Reptiles,CR,Marine - open ocean,Marine - open ocean,2
+Reptiles,CR,Marine - shallow sea,Marine - shallow sea,7
+Reptiles,CR,Other / unknown,Other / unknown,20
+Reptiles,CR,Rocky areas,Rocky areas,54
+Reptiles,CR,Savanna,Savanna,14
+Reptiles,CR,Shrubland,Shrubland,83
+Reptiles,CR,Wetlands (inland),"Wetlands (inland): Bogs, Marshes, Swamps, Fens, Peatlands",16
+Reptiles,CR,Wetlands (inland),Wetlands (inland): Freshwater Springs and Oases,0
+Reptiles,CR,Wetlands (inland),Wetlands (inland): Karst and Other Subterranean Hydrological Systems (inland),1
+Reptiles,CR,Wetlands (inland),Wetlands (inland): Other,11
+Reptiles,CR,Wetlands (inland),Wetlands (inland): Permanent Freshwater Lakes (over 8ha),17
+Reptiles,CR,Wetlands (inland),Wetlands (inland): Permanent Freshwater Marshes/Pools (under 8ha),12
+Reptiles,CR,Wetlands (inland),Wetlands (inland): Permanent Rivers/Streams/Creeks (includes waterfalls),46
+Reptiles,CR,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),6
+Reptiles,CR,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,7
+Reptiles,EX,Artificial - land,Artificial - land,1
+Reptiles,EX,Artificial - water and marine,Artificial - water and marine,0
+Reptiles,EX,Caves and underground,Caves and underground,0
+Reptiles,EX,Desert,Desert,0
+Reptiles,EX,Forest,Forest: Other,0
+Reptiles,EX,Forest,Forest: Subtropical/Tropical Dry,11
+Reptiles,EX,Forest,Forest: Subtropical/Tropical Mangrove Vegetation Above High Tide Level,0
+Reptiles,EX,Forest,Forest: Subtropical/Tropical Moist Lowland,2
+Reptiles,EX,Forest,Forest: Subtropical/Tropical Moist Montane,0
+Reptiles,EX,Forest,Forest: Subtropical/Tropical Swamp,0
+Reptiles,EX,Forest,Forest: Temperate,0
+Reptiles,EX,Grassland,Grassland,1
+Reptiles,EX,Marine - coastal,Marine - coastal,3
+Reptiles,EX,Marine - deep sea floor,Marine - deep sea floor,0
+Reptiles,EX,Marine - intertidal,Marine - intertidal,0
+Reptiles,EX,Marine - open ocean,Marine - open ocean,0
+Reptiles,EX,Marine - shallow sea,Marine - shallow sea,0
+Reptiles,EX,Other / unknown,Other / unknown,9
+Reptiles,EX,Rocky areas,Rocky areas,0
+Reptiles,EX,Savanna,Savanna,1
+Reptiles,EX,Shrubland,Shrubland,3
+Reptiles,EX,Wetlands (inland),"Wetlands (inland): Bogs, Marshes, Swamps, Fens, Peatlands",0
+Reptiles,EX,Wetlands (inland),Wetlands (inland): Freshwater Springs and Oases,0
+Reptiles,EX,Wetlands (inland),Wetlands (inland): Karst and Other Subterranean Hydrological Systems (inland),0
+Reptiles,EX,Wetlands (inland),Wetlands (inland): Other,0
+Reptiles,EX,Wetlands (inland),Wetlands (inland): Permanent Freshwater Lakes (over 8ha),0
+Reptiles,EX,Wetlands (inland),Wetlands (inland): Permanent Freshwater Marshes/Pools (under 8ha),0
+Reptiles,EX,Wetlands (inland),Wetlands (inland): Permanent Rivers/Streams/Creeks (includes waterfalls),0
+Reptiles,EX,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),0
+Reptiles,EX,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,0
+Amphibians,EN,Artificial - land,Artificial - land,199
+Amphibians,EN,Artificial - water and marine,Artificial - water and marine,65
+Amphibians,EN,Caves and underground,Caves and underground,23
+Amphibians,EN,Desert,Desert,0
+Amphibians,EN,Forest,Forest: Other,2
+Amphibians,EN,Forest,Forest: Subtropical/Tropical Dry,64
+Amphibians,EN,Forest,Forest: Subtropical/Tropical Mangrove Vegetation Above High Tide Level,0
+Amphibians,EN,Forest,Forest: Subtropical/Tropical Moist Lowland,484
+Amphibians,EN,Forest,Forest: Subtropical/Tropical Moist Montane,787
+Amphibians,EN,Forest,Forest: Subtropical/Tropical Swamp,10
+Amphibians,EN,Forest,Forest: Temperate,124
+Amphibians,EN,Grassland,Grassland,154
+Amphibians,EN,Marine - coastal,Marine - coastal,0
+Amphibians,EN,Marine - deep sea floor,Marine - deep sea floor,0
+Amphibians,EN,Marine - intertidal,Marine - intertidal,0
+Amphibians,EN,Marine - open ocean,Marine - open ocean,0
+Amphibians,EN,Marine - shallow sea,Marine - shallow sea,0
+Amphibians,EN,Other / unknown,Other / unknown,5
+Amphibians,EN,Rocky areas,Rocky areas,62
+Amphibians,EN,Savanna,Savanna,21
+Amphibians,EN,Shrubland,Shrubland,128
+Amphibians,EN,Wetlands (inland),"Wetlands (inland): Bogs, Marshes, Swamps, Fens, Peatlands",79
+Amphibians,EN,Wetlands (inland),Wetlands (inland): Freshwater Springs and Oases,18
+Amphibians,EN,Wetlands (inland),Wetlands (inland): Karst and Other Subterranean Hydrological Systems (inland),12
+Amphibians,EN,Wetlands (inland),Wetlands (inland): Other,10
+Amphibians,EN,Wetlands (inland),Wetlands (inland): Permanent Freshwater Lakes (over 8ha),18
+Amphibians,EN,Wetlands (inland),Wetlands (inland): Permanent Freshwater Marshes/Pools (under 8ha),134
+Amphibians,EN,Wetlands (inland),Wetlands (inland): Permanent Rivers/Streams/Creeks (includes waterfalls),563
+Amphibians,EN,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),146
+Amphibians,EN,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,74
+Amphibians,CR,Artificial - land,Artificial - land,74
+Amphibians,CR,Artificial - water and marine,Artificial - water and marine,19
+Amphibians,CR,Caves and underground,Caves and underground,15
+Amphibians,CR,Desert,Desert,2
+Amphibians,CR,Forest,Forest: Other,0
+Amphibians,CR,Forest,Forest: Subtropical/Tropical Dry,19
+Amphibians,CR,Forest,Forest: Subtropical/Tropical Mangrove Vegetation Above High Tide Level,2
+Amphibians,CR,Forest,Forest: Subtropical/Tropical Moist Lowland,249
+Amphibians,CR,Forest,Forest: Subtropical/Tropical Moist Montane,519
+Amphibians,CR,Forest,Forest: Subtropical/Tropical Swamp,2
+Amphibians,CR,Forest,Forest: Temperate,65
+Amphibians,CR,Grassland,Grassland,86
+Amphibians,CR,Marine - coastal,Marine - coastal,1
+Amphibians,CR,Marine - deep sea floor,Marine - deep sea floor,0
+Amphibians,CR,Marine - intertidal,Marine - intertidal,0
+Amphibians,CR,Marine - open ocean,Marine - open ocean,0
+Amphibians,CR,Marine - shallow sea,Marine - shallow sea,0
+Amphibians,CR,Other / unknown,Other / unknown,1
+Amphibians,CR,Rocky areas,Rocky areas,27
+Amphibians,CR,Savanna,Savanna,3
+Amphibians,CR,Shrubland,Shrubland,50
+Amphibians,CR,Wetlands (inland),"Wetlands (inland): Bogs, Marshes, Swamps, Fens, Peatlands",29
+Amphibians,CR,Wetlands (inland),Wetlands (inland): Freshwater Springs and Oases,13
+Amphibians,CR,Wetlands (inland),Wetlands (inland): Karst and Other Subterranean Hydrological Systems (inland),11
+Amphibians,CR,Wetlands (inland),Wetlands (inland): Other,13
+Amphibians,CR,Wetlands (inland),Wetlands (inland): Permanent Freshwater Lakes (over 8ha),9
+Amphibians,CR,Wetlands (inland),Wetlands (inland): Permanent Freshwater Marshes/Pools (under 8ha),52
+Amphibians,CR,Wetlands (inland),Wetlands (inland): Permanent Rivers/Streams/Creeks (includes waterfalls),362
+Amphibians,CR,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),48
+Amphibians,CR,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,42
+Amphibians,EX,Artificial - land,Artificial - land,1
+Amphibians,EX,Artificial - water and marine,Artificial - water and marine,1
+Amphibians,EX,Caves and underground,Caves and underground,0
+Amphibians,EX,Desert,Desert,0
+Amphibians,EX,Forest,Forest: Other,0
+Amphibians,EX,Forest,Forest: Subtropical/Tropical Dry,0
+Amphibians,EX,Forest,Forest: Subtropical/Tropical Mangrove Vegetation Above High Tide Level,0
+Amphibians,EX,Forest,Forest: Subtropical/Tropical Moist Lowland,10
+Amphibians,EX,Forest,Forest: Subtropical/Tropical Moist Montane,9
+Amphibians,EX,Forest,Forest: Subtropical/Tropical Swamp,0
+Amphibians,EX,Forest,Forest: Temperate,2
+Amphibians,EX,Grassland,Grassland,0
+Amphibians,EX,Marine - coastal,Marine - coastal,0
+Amphibians,EX,Marine - deep sea floor,Marine - deep sea floor,0
+Amphibians,EX,Marine - intertidal,Marine - intertidal,0
+Amphibians,EX,Marine - open ocean,Marine - open ocean,0
+Amphibians,EX,Marine - shallow sea,Marine - shallow sea,0
+Amphibians,EX,Other / unknown,Other / unknown,17
+Amphibians,EX,Rocky areas,Rocky areas,0
+Amphibians,EX,Savanna,Savanna,0
+Amphibians,EX,Shrubland,Shrubland,0
+Amphibians,EX,Wetlands (inland),"Wetlands (inland): Bogs, Marshes, Swamps, Fens, Peatlands",1
+Amphibians,EX,Wetlands (inland),Wetlands (inland): Freshwater Springs and Oases,2
+Amphibians,EX,Wetlands (inland),Wetlands (inland): Karst and Other Subterranean Hydrological Systems (inland),0
+Amphibians,EX,Wetlands (inland),Wetlands (inland): Other,0
+Amphibians,EX,Wetlands (inland),Wetlands (inland): Permanent Freshwater Lakes (over 8ha),1
+Amphibians,EX,Wetlands (inland),Wetlands (inland): Permanent Freshwater Marshes/Pools (under 8ha),3
+Amphibians,EX,Wetlands (inland),Wetlands (inland): Permanent Rivers/Streams/Creeks (includes waterfalls),14
+Amphibians,EX,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),2
+Amphibians,EX,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,1
+Fish,EN,Artificial - land,Artificial - land,0
+Fish,EN,Artificial - water and marine,Artificial - water and marine,93
+Fish,EN,Caves and underground,Caves and underground,1
+Fish,EN,Desert,Desert,1
+Fish,EN,Forest,Forest: Other,0
+Fish,EN,Forest,Forest: Subtropical/Tropical Dry,0
+Fish,EN,Forest,Forest: Subtropical/Tropical Mangrove Vegetation Above High Tide Level,0
+Fish,EN,Forest,Forest: Subtropical/Tropical Moist Lowland,1
+Fish,EN,Forest,Forest: Subtropical/Tropical Moist Montane,0
+Fish,EN,Forest,Forest: Subtropical/Tropical Swamp,0
+Fish,EN,Forest,Forest: Temperate,0
+Fish,EN,Grassland,Grassland,0
+Fish,EN,Marine - coastal,Marine - coastal,27
+Fish,EN,Marine - deep sea floor,Marine - deep sea floor,46
+Fish,EN,Marine - intertidal,Marine - intertidal,55
+Fish,EN,Marine - open ocean,Marine - open ocean,39
+Fish,EN,Marine - shallow sea,Marine - shallow sea,239
+Fish,EN,Other / unknown,Other / unknown,6
+Fish,EN,Rocky areas,Rocky areas,0
+Fish,EN,Savanna,Savanna,0
+Fish,EN,Shrubland,Shrubland,0
+Fish,EN,Wetlands (inland),"Wetlands (inland): Bogs, Marshes, Swamps, Fens, Peatlands",107
+Fish,EN,Wetlands (inland),Wetlands (inland): Freshwater Springs and Oases,121
+Fish,EN,Wetlands (inland),Wetlands (inland): Karst and Other Subterranean Hydrological Systems (inland),43
+Fish,EN,Wetlands (inland),Wetlands (inland): Other,91
+Fish,EN,Wetlands (inland),Wetlands (inland): Permanent Freshwater Lakes (over 8ha),287
+Fish,EN,Wetlands (inland),Wetlands (inland): Permanent Freshwater Marshes/Pools (under 8ha),140
+Fish,EN,Wetlands (inland),Wetlands (inland): Permanent Rivers/Streams/Creeks (includes waterfalls),1068
+Fish,EN,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),124
+Fish,EN,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,191
+Fish,CR,Artificial - land,Artificial - land,0
+Fish,CR,Artificial - water and marine,Artificial - water and marine,33
+Fish,CR,Caves and underground,Caves and underground,1
+Fish,CR,Desert,Desert,0
+Fish,CR,Forest,Forest: Other,0
+Fish,CR,Forest,Forest: Subtropical/Tropical Dry,0
+Fish,CR,Forest,Forest: Subtropical/Tropical Mangrove Vegetation Above High Tide Level,0
+Fish,CR,Forest,Forest: Subtropical/Tropical Moist Lowland,7
+Fish,CR,Forest,Forest: Subtropical/Tropical Moist Montane,3
+Fish,CR,Forest,Forest: Subtropical/Tropical Swamp,2
+Fish,CR,Forest,Forest: Temperate,0
+Fish,CR,Grassland,Grassland,0
+Fish,CR,Marine - coastal,Marine - coastal,10
+Fish,CR,Marine - deep sea floor,Marine - deep sea floor,28
+Fish,CR,Marine - intertidal,Marine - intertidal,21
+Fish,CR,Marine - open ocean,Marine - open ocean,22
+Fish,CR,Marine - shallow sea,Marine - shallow sea,142
+Fish,CR,Other / unknown,Other / unknown,0
+Fish,CR,Rocky areas,Rocky areas,0
+Fish,CR,Savanna,Savanna,0
+Fish,CR,Shrubland,Shrubland,0
+Fish,CR,Wetlands (inland),"Wetlands (inland): Bogs, Marshes, Swamps, Fens, Peatlands",43
+Fish,CR,Wetlands (inland),Wetlands (inland): Freshwater Springs and Oases,64
+Fish,CR,Wetlands (inland),Wetlands (inland): Karst and Other Subterranean Hydrological Systems (inland),46
+Fish,CR,Wetlands (inland),Wetlands (inland): Other,34
+Fish,CR,Wetlands (inland),Wetlands (inland): Permanent Freshwater Lakes (over 8ha),251
+Fish,CR,Wetlands (inland),Wetlands (inland): Permanent Freshwater Marshes/Pools (under 8ha),65
+Fish,CR,Wetlands (inland),Wetlands (inland): Permanent Rivers/Streams/Creeks (includes waterfalls),419
+Fish,CR,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),62
+Fish,CR,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,55
+Fish,EX,Artificial - land,Artificial - land,0
+Fish,EX,Artificial - water and marine,Artificial - water and marine,2
+Fish,EX,Caves and underground,Caves and underground,0
+Fish,EX,Desert,Desert,0
+Fish,EX,Forest,Forest: Other,0
+Fish,EX,Forest,Forest: Subtropical/Tropical Dry,0
+Fish,EX,Forest,Forest: Subtropical/Tropical Mangrove Vegetation Above High Tide Level,0
+Fish,EX,Forest,Forest: Subtropical/Tropical Moist Lowland,0
+Fish,EX,Forest,Forest: Subtropical/Tropical Moist Montane,0
+Fish,EX,Forest,Forest: Subtropical/Tropical Swamp,0
+Fish,EX,Forest,Forest: Temperate,0
+Fish,EX,Grassland,Grassland,0
+Fish,EX,Marine - coastal,Marine - coastal,0
+Fish,EX,Marine - deep sea floor,Marine - deep sea floor,0
+Fish,EX,Marine - intertidal,Marine - intertidal,0
+Fish,EX,Marine - open ocean,Marine - open ocean,0
+Fish,EX,Marine - shallow sea,Marine - shallow sea,2
+Fish,EX,Other / unknown,Other / unknown,1
+Fish,EX,Rocky areas,Rocky areas,0
+Fish,EX,Savanna,Savanna,0
+Fish,EX,Shrubland,Shrubland,0
+Fish,EX,Wetlands (inland),"Wetlands (inland): Bogs, Marshes, Swamps, Fens, Peatlands",4
+Fish,EX,Wetlands (inland),Wetlands (inland): Freshwater Springs and Oases,16
+Fish,EX,Wetlands (inland),Wetlands (inland): Karst and Other Subterranean Hydrological Systems (inland),0
+Fish,EX,Wetlands (inland),Wetlands (inland): Other,1
+Fish,EX,Wetlands (inland),Wetlands (inland): Permanent Freshwater Lakes (over 8ha),55
+Fish,EX,Wetlands (inland),Wetlands (inland): Permanent Freshwater Marshes/Pools (under 8ha),1
+Fish,EX,Wetlands (inland),Wetlands (inland): Permanent Rivers/Streams/Creeks (includes waterfalls),31
+Fish,EX,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),0
+Fish,EX,Wetlands (inland),Wetlands (inland): Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,1

@@ -1,0 +1,138 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "What Australian species are at risk?",
+    "subtitle": [
+      "Each dot is one species, grouped by IUCN status and taxonomic group.",
+      "A bigger blob means more species. Hover over a dot for details."
+    ]
+  },
+  "width": "container",
+  "height": 500,
+  "data": {
+    "url": "data/tsx_threatened_species.csv"
+  },
+  "transform": [
+    {
+      "filter": "indexof(['Vulnerable','Endangered','Critically Endangered'], datum.status) >= 0"
+    },
+    {
+      "filter": "indexof(['Birds','Fish','Reptiles','Mammals','Amphibians'], datum.TaxonomicGroup) >= 0"
+    },
+    {
+      "calculate": "max(-3, min(3, sqrt(-2 * log(1 - random())) * cos(2 * PI * random())))",
+      "as": "jitterX"
+    },
+    {
+      "calculate": "max(-3, min(3, sqrt(-2 * log(1 - random())) * cos(2 * PI * random())))",
+      "as": "jitterY"
+    }
+  ],
+  "mark": {
+    "type": "circle",
+    "size": 144,
+    "opacity": 0.6,
+    "stroke": "white",
+    "strokeWidth": 0.3
+  },
+  "encoding": {
+    "x": {
+      "field": "status",
+      "type": "nominal",
+      "title": "IUCN status",
+      "sort": ["Vulnerable", "Endangered", "Critically Endangered"],
+      "axis": {
+        "labelAngle": 0,
+        "labelFontSize": 13,
+        "grid": false,
+        "labelLimit": 200
+      },
+      "scale": {
+        "paddingInner": 0.15,
+        "paddingOuter": 0.1
+      }
+    },
+    "xOffset": {
+      "field": "jitterX",
+      "type": "quantitative",
+      "scale": {
+        "domain": [-5, 5]
+      }
+    },
+    "y": {
+      "field": "TaxonomicGroup",
+      "type": "nominal",
+      "title": null,
+      "sort": ["Birds", "Fish", "Reptiles", "Mammals", "Amphibians"],
+      "axis": {
+        "labelFontSize": 13,
+        "grid": false
+      },
+      "scale": {
+        "paddingInner": 0.15,
+        "paddingOuter": 0.1
+      }
+    },
+    "yOffset": {
+      "field": "jitterY",
+      "type": "quantitative",
+      "scale": {
+        "domain": [-3.5, 3.5]
+      }
+    },
+    "color": {
+      "field": "status",
+      "type": "nominal",
+      "legend": null,
+      "scale": {
+        "domain": [
+          "Vulnerable",
+          "Endangered",
+          "Critically Endangered"
+        ],
+        "range": [
+          "#f2c744",
+          "#e8833a",
+          "#c8402b"
+        ]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "CommonName",
+        "type": "nominal",
+        "title": "Species"
+      },
+      {
+        "field": "species_id",
+        "type": "nominal",
+        "title": "Scientific name"
+      },
+      {
+        "field": "TaxonomicGroup",
+        "type": "nominal",
+        "title": "Group"
+      },
+      {
+        "field": "status",
+        "type": "nominal",
+        "title": "IUCN status"
+      },
+      {
+        "field": "years_monitored",
+        "type": "quantitative",
+        "title": "Years monitored"
+      },
+      {
+        "field": "regions",
+        "type": "quantitative",
+        "title": "Regions"
+      },
+      {
+        "field": "records",
+        "type": "quantitative",
+        "title": "Monitoring entries"
+      }
+    ]
+  }
+}

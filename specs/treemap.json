@@ -1,0 +1,563 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Treemap of endangered and critically endangered species by habitat. Needs full Vega.",
+  "width": "container",
+  "height": 460,
+  "padding": 5,
+  "title": {
+    "text": "Which habitats hold the most threatened species?",
+    "subtitle": [
+      "Endangered and critically endangered species.",
+      "A species living in several habitats appears in each. Hover for details."
+    ],
+    "anchor": "start",
+    "font": "Fraunces, Georgia, serif",
+    "fontSize": 17,
+    "subtitleColor": "#566a6e"
+  },
+  "data": [
+    {
+      "name": "hues",
+      "values": [
+        {
+          "main": "Forest",
+          "h": 135,
+          "c": 48
+        },
+        {
+          "main": "Wetlands (inland)",
+          "h": 235,
+          "c": 45
+        },
+        {
+          "main": "Marine",
+          "h": 250,
+          "c": 30
+        },
+        {
+          "main": "Savanna",
+          "h": 92,
+          "c": 52
+        },
+        {
+          "main": "Shrubland",
+          "h": 160,
+          "c": 40
+        },
+        {
+          "main": "Grassland",
+          "h": 115,
+          "c": 50
+        },
+        {
+          "main": "Rocky areas",
+          "h": 50,
+          "c": 48
+        },
+        {
+          "main": "Caves and underground",
+          "h": 305,
+          "c": 42
+        },
+        {
+          "main": "Desert",
+          "h": 72,
+          "c": 55
+        },
+        {
+          "main": "Artificial - land",
+          "h": 15,
+          "c": 52
+        },
+        {
+          "main": "Artificial - water and marine",
+          "h": 345,
+          "c": 48
+        },
+        {
+          "main": "Other / unknown",
+          "h": 0,
+          "c": 0
+        }
+      ],
+      "transform": [
+        {
+          "type": "formula",
+          "expr": "hcl(datum.h, datum.c, 60)",
+          "as": "swatch"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "url": "data/chordata_global_group_habitats.csv",
+      "format": {
+        "type": "csv",
+        "parse": "auto"
+      },
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.status === 'EN' || datum.status === 'CR'"
+        },
+        {
+          "type": "formula",
+          "expr": "slice(datum.main_habitat, 0, 6) === 'Marine' ? 'Marine' : datum.main_habitat",
+          "as": "main_habitat"
+        },
+        {
+          "type": "formula",
+          "expr": "slice(datum.main_habitat, 0, 6) === 'Marine' ? trim(replace(datum.sub_habitat, 'Marine - ', '')) : trim(split(datum.sub_habitat, ':')[1] ? split(datum.sub_habitat, ':')[1] : datum.sub_habitat)",
+          "as": "raw_sub"
+        },
+        {
+          "type": "formula",
+          "expr": "upper(substring(datum.raw_sub, 0, 1)) + substring(datum.raw_sub, 1)",
+          "as": "sub_habitat"
+        },
+        {
+          "type": "aggregate",
+          "groupby": [
+            "main_habitat",
+            "sub_habitat"
+          ],
+          "fields": [
+            "count"
+          ],
+          "ops": [
+            "sum"
+          ],
+          "as": [
+            "size"
+          ]
+        },
+        {
+          "type": "filter",
+          "expr": "datum.size > 0"
+        },
+        {
+          "type": "formula",
+          "expr": "datum.main_habitat + '|' + datum.sub_habitat",
+          "as": "id"
+        },
+        {
+          "type": "formula",
+          "expr": "datum.main_habitat",
+          "as": "parent"
+        },
+        {
+          "type": "lookup",
+          "from": "hues",
+          "key": "main",
+          "fields": [
+            "main_habitat"
+          ],
+          "values": [
+            "h",
+            "c"
+          ],
+          "as": [
+            "hue",
+            "chroma"
+          ],
+          "default": 0
+        }
+      ]
+    },
+    {
+      "name": "mains",
+      "source": "table",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": [
+            "main_habitat"
+          ],
+          "fields": [
+            "size"
+          ],
+          "ops": [
+            "sum"
+          ],
+          "as": [
+            "total"
+          ]
+        },
+        {
+          "type": "formula",
+          "expr": "datum.main_habitat",
+          "as": "id"
+        },
+        {
+          "type": "formula",
+          "expr": "'root'",
+          "as": "parent"
+        }
+      ]
+    },
+    {
+      "name": "rootnode",
+      "values": [
+        {
+          "id": "root"
+        }
+      ]
+    },
+    {
+      "name": "tree",
+      "source": [
+        "table",
+        "mains",
+        "rootnode"
+      ],
+      "transform": [
+        {
+          "type": "stratify",
+          "key": "id",
+          "parentKey": "parent"
+        },
+        {
+          "type": "treemap",
+          "field": "size",
+          "sort": {
+            "field": "value",
+            "order": "descending"
+          },
+          "round": true,
+          "method": "squarify",
+          "paddingInner": 2,
+          "paddingOuter": 3,
+          "size": [
+            {
+              "signal": "width"
+            },
+            {
+              "signal": "height"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "leaves",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "!datum.children"
+        }
+      ]
+    },
+    {
+      "name": "parents",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.depth === 1"
+        }
+      ]
+    },
+    {
+      "name": "legend_main",
+      "source": "mains",
+      "transform": [
+        {
+          "type": "collect",
+          "sort": {
+            "field": "total",
+            "order": "descending"
+          }
+        },
+        {
+          "type": "lookup",
+          "from": "hues",
+          "key": "main",
+          "fields": [
+            "main_habitat"
+          ],
+          "values": [
+            "swatch"
+          ],
+          "as": [
+            "swatch"
+          ],
+          "default": "#999999"
+        },
+        {
+          "type": "window",
+          "ops": [
+            "row_number"
+          ],
+          "as": [
+            "i"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "legend_title",
+      "values": [
+        {
+          "t": "Habitat type"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "lum",
+      "type": "sqrt",
+      "domain": {
+        "data": "leaves",
+        "field": "size"
+      },
+      "domainMin": 0,
+      "range": [
+        88,
+        32
+      ]
+    },
+    {
+      "name": "lumGray",
+      "type": "sqrt",
+      "domain": {
+        "data": "leaves",
+        "field": "size"
+      },
+      "domainMin": 0,
+      "range": [
+        {
+          "signal": "hcl(0, 0, 88)"
+        },
+        {
+          "signal": "hcl(0, 0, 32)"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "fill": "lumGray",
+      "type": "gradient",
+      "title": "Species in habitat (darker = more)",
+      "titleLimit": 215,
+      "orient": "none",
+      "legendX": {
+        "signal": "width - 215"
+      },
+      "legendY": {
+        "signal": "height + 18"
+      },
+      "direction": "horizontal",
+      "gradientLength": 200,
+      "gradientThickness": 12
+    }
+  ],
+  "marks": [
+    {
+      "type": "rect",
+      "from": {
+        "data": "leaves"
+      },
+      "encode": {
+        "enter": {
+          "tooltip": {
+            "signal": "{'Habitat type': datum.main_habitat, 'Habitat': datum.sub_habitat, 'Threatened species': datum.size}"
+          }
+        },
+        "update": {
+          "x": {
+            "field": "x0"
+          },
+          "y": {
+            "field": "y0"
+          },
+          "x2": {
+            "field": "x1"
+          },
+          "y2": {
+            "field": "y1"
+          },
+          "fill": {
+            "signal": "hcl(datum.hue, datum.chroma, scale('lum', datum.size))"
+          },
+          "stroke": {
+            "value": "white"
+          },
+          "strokeWidth": {
+            "value": 1
+          }
+        },
+        "hover": {
+          "stroke": {
+            "value": "#14262b"
+          },
+          "strokeWidth": {
+            "value": 2
+          }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "from": {
+        "data": "parents"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "field": "x0"
+          },
+          "y": {
+            "field": "y0"
+          },
+          "x2": {
+            "field": "x1"
+          },
+          "y2": {
+            "field": "y1"
+          },
+          "fill": {
+            "value": "transparent"
+          },
+          "stroke": {
+            "value": "#14262b"
+          },
+          "strokeWidth": {
+            "value": 2
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "leaves"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "datum.x0 + 5"
+          },
+          "y": {
+            "signal": "datum.y0 + 5"
+          },
+          "text": {
+            "signal": "(datum.x1 - datum.x0 > 70 && datum.y1 - datum.y0 > 30) ? datum.sub_habitat : ''"
+          },
+          "limit": {
+            "signal": "datum.x1 - datum.x0 - 10"
+          },
+          "baseline": {
+            "value": "top"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "signal": "scale('lum', datum.size) < 62 ? 'white' : '#14262b'"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "legend_title"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "value": 0
+          },
+          "y": {
+            "signal": "height + 20"
+          },
+          "text": {
+            "field": "t"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "value": "#14262b"
+          }
+        }
+      }
+    },
+    {
+      "type": "symbol",
+      "from": {
+        "data": "legend_main"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "((datum.i - 1) % 3) * legendColW + 5"
+          },
+          "y": {
+            "signal": "height + 40 + floor((datum.i - 1) / 3) * 18"
+          },
+          "shape": {
+            "value": "square"
+          },
+          "size": {
+            "value": 110
+          },
+          "fill": {
+            "field": "swatch"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "legend_main"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "((datum.i - 1) % 3) * legendColW + 16"
+          },
+          "y": {
+            "signal": "height + 40 + floor((datum.i - 1) / 3) * 18"
+          },
+          "text": {
+            "field": "main_habitat"
+          },
+          "limit": {
+            "signal": "legendColW - 24"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "fill": {
+            "value": "#14262b"
+          }
+        }
+      }
+    }
+  ],
+  "signals": [
+    {
+      "name": "legendColW",
+      "update": "max(150, (width - 250) / 3)"
+    }
+  ]
+}

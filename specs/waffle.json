@@ -1,0 +1,54 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "How many monitored Australian species are at risk?",
+    "subtitle": "One square is about 1% of species."
+  },
+  "width": "container",
+  "bounds": "flush",
+  "hconcat": [
+    {
+      "width": { "step": 28 },
+      "height": { "step": 28 },
+      "data": { "url": "data/tsx_waffle.csv" },
+      "mark": { "type": "rect", "stroke": "white", "strokeWidth": 3 },
+      "encoding": {
+        "x": { "field": "col", "type": "ordinal", "axis": null },
+        "y": { "field": "row", "type": "ordinal", "axis": null, "sort": "descending" },
+        "color": {
+          "field": "status", "type": "nominal", "legend": null,
+          "scale": {
+            "domain": ["Least Concern", "Near Threatened", "Vulnerable", "Endangered", "Critically Endangered"],
+            "range": ["#579642", "#a3b42d", "#e3a800", "#d04303", "#970c12"]
+          }
+        },
+        "tooltip": [
+          { "field": "status", "type": "nominal", "title": "Status" },
+          { "field": "species", "type": "quantitative", "title": "Species with this status", "format": "," }
+        ]
+      }
+    },
+    {
+      "height": 280,
+      "data": { "url": "data/tsx_status_summary.csv" },
+      "encoding": {
+        "y": {
+          "field": "status", "type": "nominal", "axis": null,
+          "sort": ["Least Concern", "Near Threatened", "Vulnerable", "Endangered", "Critically Endangered"]
+        },
+        "color": {
+          "field": "status", "type": "nominal", "legend": null,
+          "scale": {
+            "domain": ["Least Concern", "Near Threatened", "Vulnerable", "Endangered", "Critically Endangered"],
+            "range": ["#579642", "#a3b42d", "#e3a800", "#d04303", "#970c12"]
+          }
+        }
+      },
+      "layer": [
+        { "mark": { "type": "square", "size": 260, "opacity": 1}, "encoding": { "x": { "value": 10 } } },
+        { "mark": { "type": "text", "align": "left", "fontSize": 13, "color": "#14262b", "opacity": 1}, "encoding": { "x": { "value": 28 }, "text": { "field": "status" } } }
+      ]
+    }
+  ],
+  "config": { "view": { "stroke": null } }
+}
